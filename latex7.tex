@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=1.5cm]{geometry}
+\begin{document}
+We will solve a math that has a simplified taste of equations and comes quite often in discussing the Physical Mathematics.
+\\
+Be ready to use the pinky finger like a pro, but yes it will take considerable amount of time anyway.
+\begin{equation}
+\sqrt{10 + x} = \sqrt{\alpha + \beta} + T
+\end{equation}
+ 
+ Your job is to look for the value of $T$ in a distinct manner so that the roots are gone. We do it taking a square of the both side of the equation.
+ 
+ \begin{align}
+ &\sqrt{10 + x} = \sqrt{\alpha + \beta} + T \notag \\
+ &or, \, ( \sqrt{ 10 + x } )^2 
+  =
+  (  \sqrt{\alpha + \beta} + T )^2 \notag \\
+ &or, \, 10 + x = (\alpha + \beta) +
+  2 ( \sqrt{ \alpha +\beta } ) T +
+   T^2		\notag \\
+ &or, \, 10 + x - \alpha - \beta = 2T \sqrt{ \alpha + \beta} + T^2  \notag 
+ \end{align}
+
+We shall do another problem from the physics part, let's do a Morin.
+
+\textbf{Example:} Consider a thrown ball. We have that,
+\[ L = \frac{1}{2}
+m ( \dot{x} + \dot{y} + \dot{z} )
+- mgz \]
+Notice that it is invariant under translations in $x$, that is $x \rightarrow x+ \epsilon$. Also the same is seen in case of y that $y \rightarrow y + \epsilon$, we can say that both the $x$ and $y$ are cyclic coordinates. For the application of the Noether's Theorem we can work under these conditions.
+\\
+As we know the quantity that don't change with time according to the Noether's Theorem is 
+\begin{equation}
+P(q,\dot{q}) = \sum_{i}^{n}  \frac{\partial L}{\partial \dot{q}_i} \times K_i(q)
+\end{equation}
+We therefore have the two symmetries in our \emph{Lagrangian}. The first has that $K_x = 1$, and $K_y = 0$ and that $K_z = 0$. The one conserved momenta are,
+
+\begin{equation}
+P_1(x,y,z,\dot{x}, \dot{y} , \dot{z} ) = \frac{\partial L}{\partial \dot{x}}  K_x
++
+\frac{\partial L}{\partial \dot{y}} K_y
++
+\frac{ \partial L}{\partial \dot{z}} K_z = m \dot{x}
+\end{equation}
+
+This provides a way to find the conservation laws that we are interested in. What I think here is that the \emph{Lagrangian} formalism is much more fundamental as it precludes a very specific idea that the action integral $S = f(x,\dot{x},t)$ is minimized depending on the variable of the system where the phenomenon is occurring. But if the cosmological redshift is taken into account then what turns out the formalism of Energy Conservation law breaks down.
+
+Look at this, if there is a Photon moving through an Expanding space, then with the distance it transverses, the expansion expands up its energy, somewhat streching it out and reducing its frequency. Okay, but where does this energy go?
+
+For getting the answers and to save the energy conservation law, the \emph{Landau Lifshitz Pseudotensor} was enacted. But it raised much controversy than the question it answers.
+
+
+\newpage
+\begin{equation}
+t =
+\frac{t_0}{ \sqrt{ 1 - \frac{v^2}{c^2}  }}
+\end{equation}
+
+\begin{equation}
+t = \frac{t_0}{  \sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

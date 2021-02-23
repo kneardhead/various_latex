@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm}
+\usepackage[top=0.8in,  bottom=0.8in,  right=0.7in,  left=0.7in]{geometry}
+\newtheorem{prob}{\textsf{Problem}}
+\newtheorem{sol}{\textsf{Solution}}
+\theoremstyle{definition}
+\clearpage
+\title{\textsf{Understanding how \LaTeX\  handles Integrals}}
+\author{Ahmed Saad Sabit}
+\date{22 Sept 2019}
+\everymath{\displaystyle}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+I try to write an integral with correct alignment in \LaTeX
+\\		
+\end{abstract}
+We start doing the integration of a very rude mathematical expression often faced in calculations with \emph{Electric Fields} and \emph{Astronomy}, though not quite often in the latter one.
+\theoremstyle{definition}
+\begin{prob}
+ Solve the following integral $\int\frac{x}{(x^2+a^2)^{\frac{3}{2}}}\, \mathrm{d}x  $
+\end{prob}
+\begin{sol}
+Our strategy would be to eliminate the things we aren't familliar with, in this case the integral with \emph{powers and powers above the bracket}. Hopefully, this simplification becomes very doable in case we put \emph{Trigonometric DIfferentials} in place of odd things.
+\begin{align}
+\int\frac{x}{(x^2+a^2)^ {\frac{3}{2}}} \, \mathrm{d}x \notag = \int\frac{a\,tan\theta}{ (a^2\, tan^2\theta + a^2)^ {\frac{3}{2}} } \, a\, sec^2\theta \,\mathrm{d}\theta
+\end{align}
+As we make an educated guess that taking a and x as a side of a right angled triangle with $\theta$ angle in between,
+\begin{align}
+x & = a \, tan\theta  \notag \\
+ x^2 & = a^2 \, tan^2\theta  \notag \\
+ \mathrm{d}x& = a \,sec^2 \theta\, \mathrm{d}\theta \notag
+\end{align}
+So we move to specifically chase what we sought of,\\
+\begin{align}
+\int \frac{a^2 \, tan\theta \,sec^2\theta}
+    		{ (a^2)^{\frac{3}{2}} (tan^2\theta + 1)^{\frac{3}{2}} } \, \mathrm{d}\theta	\notag 
+&=\int \frac{a^2 \, tan\theta \,sec^2\theta}
+			{a^3 \, (sec^2\theta)^ {\frac{3}{2}} }	\, \mathrm{d}\theta	\notag \\
+&= \frac{1}{a} \, \int \frac{tan\theta \, sec^2\theta}
+								{sec^3\theta} \,\mathrm{d}\theta		\notag \\
+&= \frac{1}{a} \, \int tan\theta \, cos\theta 	\, \mathrm{d}\theta \notag \\
+%
+&=\frac{1}{a} \, \int sin\theta \, \mathrm{d}\theta \notag	\\
+&= - \frac{1}{a} \, cos\theta + C_0 \\
+\intertext{By simply bringing back what we did to the x's and a's,}
+&= - \frac{1}{\sqrt{x^2 + a^2}} + C_0
+\end{align}
+\end{sol}
+
+That's how we barybash a stupid integral like a pro ! :)\\
+\newpage
+
+\textsf{\textbf{The Idea's making this document}}\\
+
+I had to struggle getting okay with the alignment rule. Its better not to clutter things but keep them broken in parts because the math environment don't really care about it. \\
+I used the geometry package to keep things cool. Refer to this factory editor $\LaTeX$ page for technical procedure's. Its to reduce the ridicoulous level of default spaces in the product pdf. \\
+The "clearpage" declaration before starting the document reduces unwanted spaces.\\
+Making the notag is somewhat a kind of relief. Keep in mind of the double slashes in align, dollar sign and "and" sign for normal stereotype maths.\\
+
+We have to be able to write maths in $\latex$ in the fastest manner possible, otherwise it will become problematic to use, I will drill the \emph{Maxwell's Equations in the fastest manner}, of course the differential one.
+
+\textbf{Drills on Maxwell's Equations}
+Time starts in 6:58,
+\begin{equation}
+\nabla \dot \textbf{E} = \frac{\rho}{\epsilon_0} \\
+\nabla \times \textbf{B} = 0 \\
+\nabla \times \textbf{E} = - \frac{\partial \textbf{B}}{\partial t}
+\nabla \times \textbf{B} = \textbf{J} + \frac{\partial \textbf{E}}
+{\partial t}
+\end{equation} 
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
