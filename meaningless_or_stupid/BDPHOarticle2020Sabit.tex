@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[cp437]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\author{Ahmed Saad Sabit}
+\date{14 December 2019}
+\title{{\small Submitted for the Bangladesh Physics Olympiad 2020 Souvenir } \vspace{1.7cm}\\
+The Analogy of Electric Fields with Fluid Flow: And a rough introduction to Vector Calculus}
+\begin{document}
+\maketitle
+What if in this year Regional Physics Olympiad, there was a problem that asked you to find the Mutual Force in between two \emph{charged spherical conductor}? Easily, write the Coulombs Law, put the values and do the math. Or else if it was Geometrically little complex, then carry out a simple Integration, put some trigs as learnt from the good old Halliday, Resnik and Krane Physics book (HRK). But what if the problem demanded, ``Find the Charge Density or the way how the charge is composed on the surface of the conductor", then? We see the statement is made on Charged Spherical Conductor. So whatever charges are in the conductor have the ability to move freely, and the mutual force per small charge (here it would be the electron) would cause it to move away, hence, the sides of the conductor that faces each other would have some positive charges and the electrons accumulated on the ends; that face that are opposed to the facing sides. The charge density that we are looking for will have dependence on the coordinates. But how can we find the mathematical formalism?
+
+	Physicist had to work for finding way out before they found that the Potential and Idea of Energy does the thing quite nicely, given the application of a little bit of sophisticated mathematics. We can imagine that a few lines of Equipotential surfaces are around the two conductor system, that takes an oval like shape depending where the charges are kept, but as one moves very far from the system, the equipotential surfaces takes the shape of a rough sphere, that could also be attained by a single point charge, that has the total value of charge equal to the system. The rate of change of the potential around the system would be zero to be an Equipotential. So if there is some function $\phi(x,y,z)$ that can give the value of potential in any coordinate $(x,y,z)$, then for the title of Equipotential, it should follow
+	
+	\begin{equation}
+	\frac{\partial \phi}{\partial x} +
+	\frac{\partial \phi}{\partial y} +
+	\frac{ \partial \phi}{\partial z} = 0
+	\end{equation}
+
+No worry on that weird inverted 6 like ``d" for differential that is simply what you put in place of the ``d" in ``d/dx" if the function turns out to be dependent on more than one variable.
+ This technique can be applied on the system and the charge density can be found out. Let the problem be kept for solving later on.
+ 
+ 
+	A safe declaration can be made that most of the children doing Physics don't really like the way how Electromagnetism turns out (neither do I). In fact Electromagnetism isn't as vibrant as the Mechanics problems; everyone would prefer solving an Inertia Tensor of a spinning top rather finding out the Magnetic Field in a free space. Whenever I try to do any problem from it, it is sure the problem requires some difficult Integral Calculus. But Electromagnetism can really be fun in a way, let's ponder on another problem as we discover how we solve a Charge problem using Optics (!).
+	
+	
+	What would be the Magnitude and Direction of the Force on a Positive Electric Charge ``+Q" that is ``h" distance above a sheet of an infinite sized conductor? 
+
+	
+In this case, remember that the charge we have above the conductor is Positive 
+$+Q$. Thus a lot of electrons move toward part of the conductor that is near the charge. A negative charge made field would be made on the conductor sheet that pulls the Positive charge above towards it, so the direction of force would be towards the conductor. This was easy, but the fun is in finding out the magnitude. A net positive charge will be away the part of the vicinity (vicinity means nearby) of charge $+Q$. Making the calculation of the net accumulated charge (electron) near the vicinity of the $+Q$ above the conductor is going to be a very difficult task. Because, if we assume some $-q$ charge in the form of circular disk is made on vicinity of the conductor, this $-q$ charge will resist any further charge on the conductor to be near, but the charge above $+Q$ stronger, more charges in the conductor will join the circular disk. Carrying out the math of the circular disk would be interrupted as we hardly can find how many charge has been gathered, also given the positive set of charge in conductor far away the vicinity will push the $+Q$ a bit. A big mathematical mess.
+
+
+But none of this assumption has to be done if we leave this way of facing the problem.  We know that if a conductor is near a charge, the field lines entering or exiting the conductor has to be perpendicular near the surface, this leaves us with a system that looks like the figure. Remember charge is induced on the surface of the conductor. And tactfully applying Gauss law, what comes is that the system is totally similar that a $-Q$ charge $2h$ distance away is attracting the $+Q$ charge. The electric field lines of the $+Q$ enters perpendicularly into the conductor, and to obey the Gauss Law, that the net charge in a small part of the conductor should be zero. Thus somewhat a new field line emerge that seems to exit the conductor through the other side. That new alien charge that we call is Image Charge. 
+	
+
+The force has to be
+
+	\begin{equation}
+	F = \frac{1}{4 \pi \epsilon_0}
+	\frac{Q^2}{(2h)^2}
+	\end{equation}
+
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = .8 \textwidth]{../User/phoArticleImg/uti1.png}
+\caption{: The image charge is the Q below, and it is nonexistent. Note that the field line through conductor enters and gets out perpendicularly. }
+\end{figure}
+
+
+In a simple summary, my point is that for any system, where there is some charge near by a conductor, the force it faces is same as an opposite charge is attracting it, from a position where the virtual image of the charge would have formed if the conductor was a Mirror. Applying Fermat's Least Time Principle, the math can be taken to the next level.
+
+
+The Maxwell's Equations are a wonderful set of formulas that describes Electromagnetism with excellent amount of brilliance. The Faradays law of the Maxwell's Equation in differential form is written as,
+
+
+	\begin{equation}
+	\text{curl} \vec{E} = - \frac{\partial \vec{B}}{\partial t} 
+	\qquad
+	\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} 
+	\end{equation}
+
+
+Where the triangle is called the nabla and is extremely interesting to work with. It would be a whole lot of writing worth a book to explain its meaning. But if interested, give a read to the great Vector Calculus book  ``Div Grad Curl and All that" by Schey. Nice book on the topic.  
+
+
+Now I don't want to write an article where the reader needs to know vector calculus beforehand. Let's see the thing with models and diagrams in a more basic manner, making an understanding what the math really tries to make the sense of. Imagine a water flow in a river and the water is composed of particles (of course the particle here is a molecule). The flow is constant, the molecules have mass, doesn't awkwardly change and the water is incompressible. We imagine that we know the velocity of every particle, and know which direction it points to; simply that we know about the velocity vector of every particle. Multiply the mass and we know the momentum of all particle. Now this momentum vectors of the particles won't be chaotic or unpredictable, because it is in a flow, the momentum vectors will usually point along the flow. We can describe a function that can tell the momentum of the particle in a given location. The momentum vector of particles can be similarly understood using a general formula. Simply, we input that the position is 2 m from the bank of the river and can get the momentum $6kmkg/h$ and $0.3 m$ from the bank $2kmkg/h$ (just an example). The viscous drag or the friction of the particles with the wall (bank of the river) reduces the velocity. Let we call the special function that gives the momentum of a particle at a given point as V, that mathematically is a field function.
+
+
+There is no vortex or whirlpool (that tornado like spiral flow) in the flow. That roughly means that the rotation of the flow at any point is zero. The momentum vectors don't point as if they are circling. This all in mathematical formalism is said by 
+
+	\begin{equation}
+	curl \, \vec{V} = 0
+	\end{equation}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\textwidth]{../User/phoArticleImg/uti2.png}
+\caption{The curl is non zero at a little rightwards point outside the image. It is where the center of the rotation is. Curl of any point outside the center is zero.}
+\end{figure}
+
+
+Given that for any point in the flow. This is thus can a mean any rotation in a field. The formulas to do any math related to curl as above is a part of the vector calculus. The curl value is positive when the rotation is same as the right hand rule. 
+
+
+Now let us see another interesting case. What if we take the rate of change of V along the coordinates? Let's assume for now that see the river from above and only are interested how the upper layer particles move. The rate of change of V along the projection on the coordinates (I mean position) x and y is 
+	\begin{equation}
+	 \frac{\partial \vec{V_x}}{\partial x} +
+	  \frac{\partial \vec{V_y}}{\partial y}
+	\end{equation}
+
+
+Now what if the value of this above equation solves value more than 0? That means there is some increase of the momentum. How will the momentum increase? If we put a water hose and start it so that it adds water in the flow, hence increasing it in mass a certain point (where the mouth of the hose is). So if it happens that if the value is negative then what can it mean? It means that someone is taking away water from that point. Mathematically, the thing is called the Divergence of the flow, simply
+	\begin{equation}
+	div \, \vec{V} = \nabla \cdot \vec{V} = 	
+	 \frac{\partial \vec{V_x}}{\partial x} +
+	  \frac{\partial \vec{V_y}}{\partial y}
+	\end{equation}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8 \textwidth]{../User/phoArticleImg/uti3.png}
+\caption{The center black part has the attribute of source, that's where the div is positive. Because it feels as if the flow emerging from the black dot at the center.}
+\end{figure}
+
+That might be any value. A source will yield a positive div, a sink will do negative, and just the flow shall do 0. Intuitively, the div of the flow of water from a tap is zero, except the mouth of the tap from where the water is coming. There the div is more than zero. The more strongly the water comes the tap, more value the div V for that position. It makes sense, more the velocity of the particles then the more momentum, so as if the mouth is wide, then more mass of water shall come. The sink is where the water reduces, hence the div is negative. And yes, curl is mostly seen as the water draining away in a vortex as you flush a commode, worth trying! 
+All of it is a formal way to calculate fields that take similar to flow.
+
+
+For those who look forward out of curiosity what nabla means, give a look to the tiny equation below. Phi is scalar that depends on the coordinate. And the V is some vector field, same as we described for water flow.
+	\begin{equation}
+	\nabla =
+	 	\frac{d}{dx} \hat{x}+ \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} 
+	\end{equation}
+	\begin{equation}
+	div \, V =
+	\left(\frac{d}{dx} \hat{x}+ \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z}\right) \cdot
+	(V_x \hat{x} + V_y \hat{y} + V_z \hat{z}) = 
+	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}
+	\end{equation}
+
+
+Okay, so we have an idea what a curl and a divergence can do. Curl makes a numerical value of rotation of the field and the Divergence makes a numerical value on the magnitude of how much extra flow is contributed by a source or the opposite sink. Have you guessed why we had entered hydrodynamics instead of doing electromagnetism? Yes, to understand Maxwell's Equation, but it seems that the Maxwell's Equation in differential form all take the Hydrodynamic identity, see the four Maxwell's Equations,
+	\begin{equation}
+	div \, \vec{E} = \frac{\rho}{\epsilon_0}
+	\end{equation}
+	\begin{equation}
+	div \, \vec{B} = 0
+	\end{equation}
+	\begin{equation}
+	curl \, \vec{E} = - \frac{\partial \vec{B}}{\partial t}
+	\end{equation}
+	\begin{equation}
+	curl \vec{B} = \mu_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t}
+	\end{equation}
+	
+
+The Rho is the charge density, J is the current density vector (current per unit cross section area), Mu-not is the permeability constant of free space and c is well known Leightgeschwindigkeit (speed of light, as in German by Einstein). Now doesn't the Electric Vector Field and the Magnetic Vector Field seems interesting? If not, then see that the source of Electric field is dependent on the charge density. What is that? That can nicely be seen when you imagine drawing the field lines of two opposite charges, from positive it emerge and get inside negative charge. This is same as water flow, there is a big plate, and in point, there is a water pipe vertically putting water in the plate. And near is a hole from where the water should sink, and the water flow takes the shape of the electric field lines when we draw a negative charge near a positive. 
+
+	
+	\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width = 0.95 \textwidth]{../User/phoArticleImg/ut4.png}
+	\caption{The similarity of the two kind of ``flow" and the rough black and white Image is from the HRK which is the image of a Linear Dipolar Water flow.	}
+	\end{figure}
+	
+	
+	
+	So this extremely interesting that mathematically, Electric Fields are same a water flow! They can vortex out like water, they can flow like water. And some math proves that Light, being an Electromagnetic Wave is actually like a Water Wave in the sea of Electric Field! Almost same to the Magnetic Field, the div of it is zero, because there is no isolated Magnetic Pole, a north pole always has a south pole, different from the charge.  So net div of north pole is zeroed by the south pole. But there is no limit in rotating, so that rotation of the magnetic field depends on the current density (remember that magnetic field is always accompanied with a Current, by Ampere's Law) and the rate of change of Electric Field.  
+	
+	
+ 	This parallelism of the fields is really astonishing because the general idea of the electromagnetic fields don't assume any Hydrodynamic things. It only makes an idea of Flux and from it comes the analogy of water flow with that. But will it help in solving severe problems in the competition? Definitely, Yes!
+ 	
+ 	
+	See the last year Physics Cup problem1 2019, Prof. Jaan Kalda had given hint to it. The problem is given.
+	
+	
+{\sffamily When a body moves in liquid, the motion of the body puts the liquid into motion, too. The motion of liquid contributes to the total kinetic energy of the system, and hence, leads to an increased effective mass of the body. The difference of the effective mass and the actual mass of the body is referred to as the added mass. The added mass depends on the size and shape of the body. Consider a certain metallic body of volume V and polarizability a along its symmetry axis x (i.e. homogeneous externally applied electric field E induces total dipole moment $\vec{p} = a\vec{E}$ on this body). Additionally, the body shape is such that if it were made from a homogeneous dielectric material and put into homogeneous electric field, the electric field inside the body would be also homogeneous. Find the added mass of this body when it starts moving transnationally, parallel to the x-axis, in an incompressible initially motionless liquid of density rho. (Best solutions can be found in the Physics Cup 2019 website)}
+
+
+The technique is knowing the boundary conditions and writing the Maxwell's Equations in the hydrodynamic analogy of the problem text. And doing some very basis vector calculus finishes the job. A way of finding equation is that the vortex absence makes the curl of the fluid field be zero. It is quite exaggeration for people like us, but this is a great problem that actually makes the sense of how awesome Physics can be against Biology and Chemistry.
+
+
+	Electrodynamics thus is two form like, one place is of the realm of the equations of Coulombs Law and simple University Physics (Sears and Zemansky) topic; the other is place of the mathematics that takes Electrodynamics same as a fluid. That's where the Laplacian and Poisson's Equation takes over.
+	\begin{equation}
+	\nabla^2 V = 0 \qquad \text{(Laplacian Equation)}
+	\end{equation}
+
+ But very necessarily, these sort of much deeper sort of understanding doesn't get useful competitions everytime, but so what? We are sneaking into the Mysterious Mathematical Rule that describes the Universe, PHYSICS!
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
+
+
+
+
+
+
+

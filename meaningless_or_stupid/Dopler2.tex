@@ -1,0 +1,248 @@
+\documentclass[a4paper]{article}
+
+%%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{hyperref}
+\title{The Doppler Effect: Part 2}
+\author{Ahmed Saad Sabit }
+\date{\today} 
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+    \maketitle
+So, we will now find the doppler effect for sound, the \emph{Acoustic Doppler Effect. }
+
+But at First, I will tell a very necessary \emph{``Claim''}. 
+\begin{center}
+    \textsc{The speed of sound in a medium is independent of the speed of the source.}
+\end{center}
+Why? I will tell the reason rigorously and you don't need to understand why. Just look at the material. 
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+\section{Why Speed of Sound is independent of source speed (And you don't need to understand this too much)}
+We have the \emph{Continuity Equation for any matter }. 
+\begin{equation}
+\int_{S}^{}          \rho \vec{u} \cdot       \, 
+\mathrm{d} \vec{S}
+\end{equation} 
+And then we can have the \emph{Euler Equation for Fluid}, 
+\begin{equation}
+- \frac{1}{\rho} \nabla p = \frac{ D \vec{u} }{ Dt } 
+\end{equation} 
+Now, the $Du/dt$ is the convective derivative. It is the acceleration of the fluid if the field function of the 
+fluid is dependent on the position and time. 
+
+If you look for the one dimentional case, and substitute $s = \frac{ \delta \rho }{ \rho }$, then, introducing the bulk modulus as, 
+\[ B = - \frac{1}{V_0} \frac{ dp }{ dV }\]
+we can finally come to, after solving the above two equation with given mathematical equality, 
+\begin{equation}
+\frac{\partial ^2 s}{\partial x^2 }= \frac{ \rho }{ B } \frac{\partial ^2 s}{\partial t^2} 
+\end{equation}  
+Which is same as any wave equation, 
+\begin{equation}
+\frac{\partial ^2 y}{\partial x ^2 } = \frac{1}{v^2} \frac{\partial ^2 y}{\partial t^2}
+\end{equation} 
+For this reason, the propagation speed of waves in any fluid medium is, 
+\begin{equation}
+v_s = \sqrt{\frac{ B }{ \rho }} 
+\end{equation} 
+Let me tell this in short what the hell has been done above, we start off with \emph{Mass conservation in Fluid Flow}
+and then use the \emph{Euler's Equation}, that is kind of the Newtons Second Law for any fluid flow. Then introducing 
+a mathematical substitute for density (that I called $s$ ), we find that the density of fluid is to oscillate, because this 
+$s$ satisties the wave equation. But the wave equation has a term $v_s$ that is the propagation speed of wave in the fluid. 
+
+This wave is just the oscillation of pressure in the fluid if the fluid is assumed to be air. And this is actually sound. 
+
+This wave if has large amplitude, will sound high volume, and if has high frequency will sound very sharp. So, the only take away from this is, 
+\begin{equation}
+v_s = \sqrt{\frac{ B }{ \rho }}
+\end{equation} 
+Which is the speed of propagation of wave; or say; speed of sound in air.
+
+But notice a fact, this speed \emph{DOES NOT} depend on the source speed. The air will be oscillating propagating a wave, but this speed of wave will not 
+at all depend on the source speed. 
+
+Or, think in this manner, all what is happening about sound is that the air is going back and foorth. And this back and forth going
+will obviously depend how ``rigid'' the air is (bulk modulus) and how ``dense'' the air is. Theres no dependence on the source, because this 
+wave is motion of ``medium'', not any random particle beiing emitted from a source. 
+
+So, this claim is proved. Or if you don't like this, check the link in the last section. 
+
+\section{Getting our head around moving sources and observers}
+So what's up with moving sources and moving receivers? We will continue by following a very necessary understanding. 
+
+I have already told that the speed of sound will be same no matter what the speed of the source is. But, if you have read the past paper (part 01), 
+there is loophole in my diction. If speed of sound is same, then relative to whom? 
+
+Guess, can it be relative to source? 
+
+NO, NOT AT ALL, the speed of sound will be constant with \emph{respect to the Medium.} 
+
+\begin{center}
+    \textsc{The speed of sound in a medium is independent of the speed of the source, with respect to the Medium.}
+\end{center}
+
+And this is what we had assumed in the long derivation above. If there is wave propagation, then this wave will seem to look moving at a spee of $v_s$ to 
+the resting Earth (relative to whom, the air is at rest). 
+And someone moving through the sound wave propagation (towards the source), will certainly measure the wave speed to be more (because he is moving). 
+
+If the source is moving, even he will measure different wave speed relative to him, because he is moving with respect to the medium and the wave 
+speed is supposed to be constant relative to the medium, not source. 
+
+So, if we draw the wave fronts of sound with respect to the medium, it will be perfectly spherical, without any dependence of the motion of the source. 
+
+But, if the sound is continuously rings, then the moving source can cause a conical shape of many wavefronts to form. 
+
+%figure put here, wave cone. 
+
+\section{Doppler Effect }
+Let us make this scenario as we did in the last part of the previous note (Part 01). The source, (actually emitter in the previous note) have a speed $v_{source}$ 
+and the receiver (observer, or the wall from the previous note) have a speed $v_{observer}$, so, we can tell, if the speed is such that the 
+receiver and source is coming closer, the source measures speed of source, 
+\[ \mathbb{V} =| v_{source} + v_{receiver} | \]
+If the situation is that the source and receiver are relatively moving away from each other, 
+\[ \mathbb{V} = | v_{source} - v_{receiver} |  \]
+
+You can visualize the situation in this sort of manner, draw a line that connects the source and receiver, 
+if the line becomes smaller with time, then the distance between them is decreasing, if the line is expanding,
+distance between is increasing. I might re copy past some old diagrams from previous note. 
+% old diagram on relative position. 
+
+Now in Doppler Effect, if we choose the Medium referance frame (which is the best to choose as the sound speed remans constatn),
+we can have an anarchy of source and receivers moving randomly, but, we can immediately change to source frame or receiver frame, bring additional
+required changes to the sound speed in these frame, and like so we can solve for the things we require. 
+
+Now, we should recall, that the sound speed is the equation \begin{equation}
+v_s = \lambda f
+\end{equation} 
+Or, we can also use this $f = \frac{1}{T}$ to tell that, \begin{equation}
+v_s = \frac{ \lambda }{ T }
+\end{equation} 
+I will use the $v_s = \lambda f$ for procedure. 
+
+Let we have the situation, 
+\begin{tcolorbox}
+    Speed of emitter/ source respect to the medium $= v_e$ \\
+    Speed of receiver respect to the medium $= v_r$ \\
+    The direction of motion of both source and receiver can be backwards or forwards. \\
+    Medius is at rest respect to Earth, and we are on earth measuring things (as usual physics people next door.) \\
+    Now let some sound of frequency $f_0$ (measured from source), speed $v$ in medium be emitted from source. Then, 
+
+    \emph{What shall be the frequency of the sound relative to the observer?}
+\end{tcolorbox} 
+I will solve this in very short text. Because there is possibility that the motion cna be backwards or forwards, we can put a $ \pm $ 
+in the speed sign. Let the sound propagate in the right direction (increaseing x) and increasing x be positive.
+
+Relative to Medium or Earth, the speed of receiver is $v_r$ and speed of sound respect to the Earth is $v$. So, speed measured by the 
+receiver of sound can be, 
+\begin{equation}
+v* = v \pm v_r
+\end{equation} 
+Please remeber how relative speed relation follows when changing from one frame to another (Part 1 of the Note). 
+
+Now there is a varied speed in the receiver. But please be little cautious, kinematically we are more inclined to directly relate the source and receiver, 
+but here the situation is quite different, the speed of sound remains constant in the medium frame. 
+
+I would also like to clean some mess and make the procedure look more straightforward to think, so without making analysis of speed, let us analyze the wavelenghts.
+
+In the source frame, the speed measured should be, 
+\begin{equation}
+\tilde{v} = v - (\pm v_e)
+\end{equation} 
+The negetive sign because, if the emitter is moving towards the direction the sound is moving, the speed has to be subtracted, and if the 
+source moves in opposite direction to the wave speed, the speeds relative add. 
+
+$\tilde{v}$ is speed measured by emitter and $v*$ is speed measured by source. And $v$ is measured by Earth (us.).
+What will be the sound frequency measured by the receiver?
+Let us begin inputting the $\lambda f = v$ in the equation of speed for receiver.
+\begin{align}
+    v* & = v \pm v_r \\
+    f* \lambda* & = f \lambda \pm v_r 
+\end{align} 
+The stars are the things measured by the receiver. And un-starred are measured by us. What is the wavelength measured by the receiver and us? And also, what frequency do we measure? 
+
+For the case of emitter, 
+\begin{align}
+    \tilde{v}& = v - (\pm v_e)  \\
+    f_0 \tilde{\lambda} &= f \lambda - (\pm v_e) \qquad \text{Lots of Laugh, we have actually isolated the} f \lambda \text{at one part.} \\
+    f \lambda &= f_0 \tilde{\lambda} + (\pm v_e) 
+\end{align} 
+Putting the $f \lambda$ in the equation $  f* \lambda*  = f \lambda \pm v_r$ finds us, 
+\begin{align}
+    f* \lambda* & = f \lambda \pm v_r \\
+    f* \lambda* & =  f_0 \tilde{\lambda} + (\pm v_e) \pm v_r \\
+    v \pm v_r &=  f_0 \tilde{\lambda} + (\pm v_e) \pm v_r \qquad \qquad \text{Using } v \pm v_r = v* = f* \lambda* \\
+    \end{align}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Some extra stuff}
+\begin{enumerate}
+    \item If you need more depth in low time, \url{https://physics.stackexchange.com/questions/237676/does-sound-waves-pick-up-the-speed-of-its-source}
+    \item Concepts in Thermal Physics: Blundell.
+\end{enumerate}
+\end{document}

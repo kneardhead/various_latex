@@ -1,0 +1,411 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=0.8cm,right=0.8cm,top=1cm,bottom=1cm]{geometry}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\author{AS}
+\title{Electrodynamics and Vector Calculus Introduction}
+\theoremstyle{definition}
+\newtheorem{fct}{ \framebox[0.05\textwidth]{Fact} }
+\theoremstyle{definition}
+\newtheorem{pr}{ \framebox[0.05\textwidth]{Pr} }
+\theoremstyle{definition}
+\newtheorem{idea}{ \framebox[0.05\textwidth]{Idea} }
+\theoremstyle{definition}
+\newtheorem{sol}{ \framebox[0.05\textwidth]{Sol} }
+
+\begin{document}
+\textsf{\textbf{Electrodynamics and Introductory Problems }}\\
+\textsf{\textbf{A S}}
+The variety of the problem that is usually faced in Electrodynamics depend on the problem setter. Even if we don’t take the idea of circuit, the variety of problems that we see are generally diverse.
+Problems can be as easy as finding the \emph{Force} in between to charged sphere or a deep as finding the charge density of two spherical conductor in the aforementioned configuration. One set of problem we use the Coulombs law, basically the fact of using \emph{Vectors} more often. Or in the same system find the \emph{Potential}. But these are less regarded on the level of Physics done these days, this is where the things like the \emph{Uniqueness Theorem}, \emph{Laplacians, Maxwell’s Equations} are used. The analogy of \emph{Electric Field} with a \emph{Fluid} becomes clear. The two problems in the Physics Cup 2020 has used demand of these Theories.
+The ideology of a fluid flow and the electric field is motivated the way we see the \emph{Electric Field Lines} totally analogues to the \emph{Streamline}. Maxwell Equations takes this to the next level, like a \emph{Non Vortex Fluid Flow} the curl of the field function should equal to zero, same encountered in the \emph{Differential Form of Maxwell Equation}. Mathematically being specific,
+\begin{equation}
+\nabla \times \text{\textbf{P}} = 0
+\end{equation}
+\begin{equation}
+\nabla \times \text{\textbf{E}} = 0
+\end{equation}
+If we assume that the $\text{\textbf{P}}$ is a vector function of the fluid flow field, and the $\text{\textbf{E}}$ is the electric field. 
+But as one might get into the mathematical realm, this becomes clear that the algebra and knowing the cosine law of adding vector is not at all complete anymore, now we start to feel the requirement of \emph{Vector Calculus}. This takes little time to master, but there is a nice method of learning this math from animation that makes it all clear and the math turn relatively simple. And we’ll come to that soon. And no worry, vector calculus is nothing but taking derivatives with equation with a coefficient $ \hat{x}, \hat{y}, \hat{z}$. All of Vector Calculus melts to very simple thing if we take it to an analogy of fluid \footnote{Playing with water in this case the pre-requiste}.
+If you are feeling awkward of the mathematical term being used, no worry, I try to write my own words and appendices on how to work with them, with some fun links that make the math alive.  Because I basically like the Mathematical way of Physics, expected you’ll frequently notice them here, at least it’s a habit.
+
+In context, we will use \emph{Griffith} and \emph{Purcell and Morin} as reference. If you find that you need a little more basic understanding, it might be better if put some efforts in the \emph{``Question"} and \emph{Exercises} from \emph{University Physics}\footnote{That I find interesting to call ``Uni Phy6"}. \emph{Irodov} is a good calculus type problem book I like as bridge between an Amatuer $F=ma$ type to Professional $ \nabla \times \dfrac{d\vec{P}}{dt} = 0$ type. The technique of the way how the document is Edited again, copied from \textbf{Prof. Jaan Kalda}.\footnote{TalTech, Estonia}
+\section{\small{General Electrics}}
+  
+%Note ! thta every problem has a labelling!  
+  
+Let's start with a general problem from Irodov.
+
+Note that almost all electrodynamics problems require a delicate use of integration and some good amount of calculus, thus it is quite necessary that you have idea on this topic, but the main point of the math is that you have to be able to calculate the contribution of a small part and then be able to calculate it for the whole system, that needs the application of trigonometry and thus requires some tactful handling of calculations with $\sin \theta, \tan \theta, \cos \theta$ etc. Thus trying to work out some appendix maths shall be helpful.
+
+\begin{fct}
+\textsf{The Coulomb's Law and the Electric Field}
+The force is a vector, so keep in mind making the separation of the \emph{vector components}.
+
+
+\[ \vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \hat{r} \]
+\[ F_x = F \sin \theta  = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \sin \theta \]
+\[ F_y = F \cos \theta = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \cos \theta \]
+
+But it is much good to take the $\frac{1}{4 \pi \epsilon_0}$ as a mere $k$. That is much better and easy to deal with.
+
+\[ \vec{F} = k \frac{q_1 \, q_2}{r^2} \hat{r} \]
+\[ F_x = F \sin \theta  = k \frac{q_1 \, q_2}{r^2} \sin \theta \]
+\[ F_y = F \cos \theta = k \frac{q_1 \, q_2}{r^2} \cos \theta \]
+
+We define the field as \emph{The force per unit charge; one coulomb}.
+\[ \vec{E} = \frac{\vec{F}}{q} \]
+Thus it stands up that, 
+
+\[ \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \]
+\[ E_x = E \sin \theta  = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \sin \theta \]
+\[ E_y = E \cos \theta = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \cos \theta \]
+
+The differential form is worth mentioning,
+
+\[ d\vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{dq}{r^2} \hat{r} \] 
+
+\end{fct}
+\begin{fct} 
+\textsf{The idea of Potential}
+When there is energy associated with any electrical system, then the \emph{Energy per unit charge is the potential}.
+
+\[ V = \frac{E}{q} \]
+
+If work is done, by the intuition of the Energy and Work relation, 
+
+\[ V = \frac{W}{q} \]
+\[ V = \frac{dW}{dq} \]
+\end{fct} 
+
+\begin{pr}
+Two small identical balls carrying the charges of the same sign are suspended from the same point by insulating threads of equal length. When the surrounding space was filled of Kerosene, the divergence angle between the threads remain constant. \textbf{What is the density of the material of which the balls are made?}
+\end{pr}
+
+\begin{idea}
+A whole lot of uninteresting thing can be excluded only by using \emph{Ratios}. Like the initial value be $V_0 = \beta \times \varphi$ and the final value be $V = \beta \times \varphi'$. If we know that $\varphi = \frac{1}{x}$ and $\varphi'=\frac{1}{x'}$, then it's obviously, 
+
+\[ \frac{V}{V_0} = \frac{\varphi}{\varphi'} = \frac{x'}{x} \]
+\end{idea}
+
+\begin{idea}
+If something stays constant, then the properties causing it shall stay constant. And the derivative would be a zero.
+\end{idea}
+
+Note that this idea gains importance if the ``Property" is one in number. As a hint, the only thing causing the threads divergence angle to stay constant is the ``Tension" of the string. So our idea will intuitively mean the property of the constant divergence angle $\alpha$ is the Tension force. The Tension of the string is caused by the Weight of the ball and the Electrical force. In kerosene, the tension force arises from the (Weight of the ball - Buoyant force from kerosene) and the Electric force inside the kerosene. And both shall cause the tension the equal. And finding the way to exploit the equal tension idea is left as the mystery of the problem. \\
+
+In vacuum, the constant $k = \frac{1}{4 \pi \epsilon _0} $. In kerosene it will take some other $ \epsilon_{kerosene}$ value that is the \emph{Electric permittivity of Kerosene}. It's value would be in the data sheet. And to find the density, the target, use the simple reason \emph{why buoyancy should arise}.
+
+ 
+
+
+\begin{pr} \label{pr1}
+Two small equally charged spheres, each with a mass $m$, are suspended from the same point by silk threads of length $l$. The separation of the two sphere is $x$, and $x < < l$. \textbf{Find the rate of charge leak $\dfrac{dq}{dt}$ with which the charge leaks off sphere} if their approach \emph{velocity} varies by $v=\frac{a}{\sqrt{x}}$, while $a$ is a constant.
+\end{pr}
+{\small
+To solve for the $\frac{dq}{dt}$, the idea lies in the tricky application of the way calculus can be used, it is that if it appears the we have an equation say somewhat like $ q = \alpha x $, then little increment in both side is $ \mathrm{d}q = \alpha \mathrm{d}x $ is we assume that $\alpha$ is a mere constant. Now dividing the both side by a $\mathrm{d}t$ yields us $\frac{dq}{dt} = \alpha \frac{dx}{dt} $. That gives us a velocity, and it's mathematically legal. 
+
+And the other thing is knowing the use of the approximation of the $\sin x \approx \tan x \approx 1 $. Then if we have a function $f(x) = z$ and suppose the math turns out that the derivative $f'(x)$ actually has a $z$ term like $ f'(x) = \beta z $ then put the $z$ function into the expression to reduce something, look if you can apply the idea.}
+
+\begin{pr} \label{pr2}
+A thin wire has electric charge $q$ and and radius $r$. \textbf{What would be the increment of the tension in the wire (the force of stretching) if a $q_0$ is introduced in the center of the wire?}
+\end{pr}
+
+The technique to the problem \ref{pr2} is really easy. Notice that the tension of the charged ring don't really effect the new tension increment. So you can work out the math totally forgetting about that. The ability of the problem weakens drastically if you have seen the way how in \emph{Halliday, Resnick, Krane} the equation of the velocity of the wave on a string was derived. You give a look to it if the problem seems too difficult for you.
+
+\begin{pr} \label{:pr3}
+A system of consists of a thin charged wire of radius $R$ and there is a very long charged thread that is aligned along the axis of the ring. The charge consisted by the thread is $q$ and the charge density of the thread is $\lambda$. \textbf{Find the \emph{Forces of interaction} in the system to the thread}.
+\end{pr}
+ 
+ The problem \ref{:pr3} is the technique of carrying out a Genius integration, you might see the appendix for the math.
+
+\begin{fct}
+\textsf{The Gauss's Law} Also the First \emph{Maxwell's Equation}, describes the flux through a surface of the electric field. Flux is the streamlines going through a surface. 
+
+\[ \int_{S} \vec{E} \cdot \, d \vec{a} = \frac{q}{\epsilon_0} \]
+
+The technique is usually taking a small surface with some symmetry in it, then using the Gauss's law, without carrying any integration that would be required for the Coulomb one. Good to know that for a sphere the area, 
+\[ A = 4 \pi r^2 \]
+For a cylinder, area of the bases and the curved surface.
+\[ A = 2( \pi r^2 ) + (2 \pi r) h \]
+
+\end{fct}
+
+
+\begin{pr} \label{pr4}
+\textsf{APhO-EuPHO BGdTST2019} There is a plastic solid sphere and it has a spherical cavity inside it a distance $b$ from the center of the ball and the radius of the cavity is $a$ that follows that $a <b$. The uniform charge density of the ball is $\rho$. Then \textbf{Find the Electric Field inside the cavity}.
+\end{pr}
+
+\begin{fct}
+Now we can show that by the principle of work done on a test charge moving towards the vicinity of a bigger charge (both same type of charge; both positive or both negative) is,
+
+\[ W = F \times (-r) \]
+
+Negative as we have to reduce the mutual distance in between the charges, and the force vector points opposite the way we are displacing. By a small increment,
+
+\[ dW = - F \, dr \]
+
+Integrating from initial position $r_1$ to final position $r_2$, 
+
+\[ W = \int dW = -\int_{r_1}^{r_2} F \, dr \]
+
+Now, we know that $ V = W/q $, so putting that, means dividing both side with $q$, 
+
+\[ \frac{1}{q} W = \frac{1}{q} \int dW = -\frac{1}{q} \int_{r_1}^{r_2} F \, dr \]
+
+This is thus trivially, 
+
+\[ V = -  \int_{r_1}^{r_2} E \, dr \]
+
+More specifically, it can be easily shown that 
+
+\[ V = - \int \vec{E} \cdot \, d\vec{r} \]
+
+This is also useful in the both side differentiated form, that reaches to vector calculus introduction,
+
+\[ E_x = - \frac{dV}{dx} \]
+
+Note this will only work if the $\vec{E}$ has no components except the $x$ axis, otherwise the formula for the system is,
+
+\[ \vec{E} = - \left(	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}\right)  \]
+
+And Physicists isolated the common above to turn it to something simple and less time consuming, can't we just write the $\frac{d}{dr} \hat{r} $ type of things in the equation once and for all? \\
+We had that,
+\[ \left(	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}\right)  \]
+If we keep reducing and introduce a symbol,
+ \[ = \left(	\frac{d}{dx} \hat{x} + \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) V \]
+ Our new symbol should stand for the bracketed part above, let it be $\nabla$,
+ \[ \left(	\frac{d}{dx} \hat{x}+ \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) = \nabla \]
+ 
+ Thus with our new symbol, 
+ \[ \left(	\frac{d}{dx} \hat{x} + \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) V = \nabla V \]
+ Our Electric Equation, 
+\[ \vec{E} = - \nabla V \]
+
+Some also like to say it in a grand style, this has some similarities with a \emph{Gradient}, so some also say it, 
+
+\[ \vec{E} = - \mathrm{grad} \, V \]
+ 
+ This is really easy and very fun, we take three derivatives respect to $x,y,z$ and have answers.
+ \end{fct}
+
+\begin{pr}
+If a function $\Phi = axy ^3 + xyz + x^2z$, then find the $ \nabla \Phi $
+\end{pr}
+
+\begin{small}
+I will show the method directly over here, same problems also included after it.
+\\
+Let's do one by one, when differentiating about x, then y and z acts as a constant
+
+\[ \frac{d}{dx} \Phi = \frac{d}{dx} (axy ^3 + xyz + x^2z) = 
+	ay^3 + yz + 2xz \]
+	
+\[ \frac{d}{dy} \Phi = \frac{d}{dy} (axy ^3 + xyz + x^2z) =
+	3axy^2 + xz + x^2z \]
+	
+\[ \frac{d}{dz} \Phi = \frac{d}{dz} (axy ^3 + xyz + x^2z) =
+	axy^3 + xy + x^2 \]
+	
+So, all together, as we know,
+
+ \[ \left(	\frac{d \Phi}{dx} \hat{x} + \frac{d \Phi}{dy} \hat{y} + \frac{d \Phi}{dz} \hat{z} \right)  = \nabla \Phi \]	
+
+Our sought answer is,
+\[\nabla\Phi = \]
+\[ (ay^3 + yz + 2xz) \hat{x} \, + \, (3axy^2 + xz + x^2z) \hat{y} \, + \, (axy^3 + xy + x^2) \hat{z} \]
+
+
+\end{small}
+
+\begin{pr}
+Keep finding the gradient, or $ \nabla \Phi $ 
+\begin{enumerate}
+\item $\Phi= x^4 $
+\item $\Phi= x y z^2 $
+\item $\Phi= x + y +z $
+\item $\Phi= ax^2 + by^4$
+\item $\Phi= x\frac{y}{z^3}$
+\item $\Phi= \frac{xy}{z^3} + \frac{abx^3}{y - z} $
+\item $\Phi= a\frac{45x}{6z^3} $
+\item $\Phi= e^x + ye^z $
+\end{enumerate}
+\end{pr}
+
+\begin{pr} \label{pr5}
+\textbf{Find the electric field strength vector} if the potential of the field has a form $\Phi = \text{\textbf{ar}}$ where \textbf{a} is a constant vector and \textbf{r} is the radius vector from the source.
+\end{pr}
+
+
+\begin{pr} \label{pr6}
+\textbf{Find the electric field strength vector} if the potential of the field is dependent on the $x,y$ coordinates by 
+\[ \Psi = a (x^2 + y^2) \]
+\end{pr}
+
+\begin{pr} \label{pr7}
+\textbf{Find the electric field strength vector} if the potential of the field is dependent on the $x,y$ coordinates by 
+\[ \Psi = axy \]
+\end{pr}
+
+These three problem above is a must before moving to vector calculus based Electrodynamics.
+
+\begin{pr}
+A point dipole has a dipole moment $p$. It is oriented in the positive direction of the $z$ axis, that is located at the origin of the coordinates. \textbf{Find the projecion of the $E_z$ and $E_{\perp}$ of the electric field strength vector} (on the plane perpendicular to the z axis at the point $S$). The point $S$ makes an angle $\theta$ and is $r$ distance from the point source.
+\end{pr}
+
+%continue for the problems and work on the edit of the ideas that will be given and the facts that you think needs to be here for completeness.
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\newpage
+\section{\small{Appendix}}
+\subsection{\small{The Calculus for the problems}}
+
+
+There is a huge set of mathematics often required for doing any problems seen in the text books like Purcell and Griffiths. Most of which are integrals often requiring trigonometry with them. So more than the Physics, it's higher math. In all course fluency in mathematics does half of the job. So it's logical to use some mathematical hacks as we work on the problems. Notice how we used the Taylor approximation in the first example problem.
+
+\begin{pr}
+ Solve the following integral $\int\frac{x}{(x^2+a^2)^{\frac{3}{2}}}\, \mathrm{d}x  $
+\end{pr}
+\begin{sol}
+Our strategy would be to eliminate the things we aren't familliar with, in this case the integral with \emph{powers and powers above the bracket}. Hopefully, this simplification becomes very doable in case we put \emph{Trigonometric DIfferentials} in place of odd things.
+\begin{align}
+\int\frac{x}{(x^2+a^2)^ {\frac{3}{2}}} \, \mathrm{d}x \notag = \int\frac{a\,tan\theta}{ (a^2\, tan^2\theta + a^2)^ {\frac{3}{2}} } \, a\, sec^2\theta \,\mathrm{d}\theta
+\end{align}
+As we make an educated guess that taking a and x as a side of a right angled triangle with $\theta$ angle in between,
+\begin{align}
+x & = a \, tan\theta  \notag \\
+ x^2 & = a^2 \, tan^2\theta  \notag \\
+ \mathrm{d}x& = a \,sec^2 \theta\, \mathrm{d}\theta \notag
+\end{align}
+So we move to specifically chase what we sought of,\\
+\begin{align}
+\int \frac{a^2 \, tan\theta \,sec^2\theta}
+    		{ (a^2)^{\frac{3}{2}} (tan^2\theta + 1)^{\frac{3}{2}} } \, \mathrm{d}\theta	\notag 
+&=\int \frac{a^2 \, tan\theta \,sec^2\theta}
+			{a^3 \, (sec^2\theta)^ {\frac{3}{2}} }	\, \mathrm{d}\theta	\notag \\
+&= \frac{1}{a} \, \int \frac{tan\theta \, sec^2\theta}
+								{sec^3\theta} \,\mathrm{d}\theta		\notag \\
+&= \frac{1}{a} \, \int tan\theta \, cos\theta 	\, \mathrm{d}\theta \notag \\
+%
+&=\frac{1}{a} \, \int sin\theta \, \mathrm{d}\theta \notag	\\
+&= - \frac{1}{a} \, cos\theta + C_0 \\
+\intertext{By simply bringing back what we did to the x's and a's,}
+&= - \frac{1}{\sqrt{x^2 + a^2}} + C_0 \notag
+\end{align}
+\end{sol}
+
+\begin{fct} \textbf{(Applying the inverse trig to integrals)}
+We have to recognize the algebraic structure and try to make the algebra look more like one the equation below. There are three general \textbf{Trig Derivatives} and \textbf{Anti - Derivatives}.\\
+\textbf{\textsf{The Sin integration rule}}
+\begin{equation}
+\frac{d}{dx} \, \sin^{-1} x \, = \frac{1}{\sqrt{1 + x^2}}
+\end{equation}
+\[
+\int  \frac{1}{\sqrt{1 + x^2}}\, \mathrm{d}x = \sin ^{-1}x + \, C
+\] 
+\textbf{\textsf{The Tangent integration rule}}
+\begin{equation}
+\frac{d}{dx} \tan ^{-1}x = \frac{1}{1 \, + \, x^2}
+\end{equation} 
+\[\int \frac{1}{1 \, + \, x^2} \, \mathrm{d}x = \tan ^{-1}x \, + \, C\]
+\textbf{\textsf{The Tangent Coefficient rule}} \\
+We can rather derive it from above. But it's the most common form we use the tangent rule.
+\[\int \frac{1}{a^2 + x^2} \, \mathrm{d}x \,=\, \frac{1}{a} \tan ^{-1} (\frac{x}{a}) \,+\, C
+\]
+\end{fct}
+But in many cases these might be helpful but it requires some practice whether to use the trig or any other sort of trick. Better try some following easy problems. Solutions are for checking.
+\begin{pr}
+Solve : $ \int \frac{1}{9+x^2} \, \mathrm{d}x$
+\end{pr}
+
+\begin{pr}
+Solve : $ \int \frac{\sin ^{-1}x}{\sqrt{1 - x^2}} \, \mathrm{d} x $
+\end{pr}
+
+\begin{pr}
+Solve : $ \int \frac{x+9}
+								{x^{2} + 9} \, \mathrm{d}x $
+\end{pr}
+
+\begin{pr}
+		Solve : $ \int \frac{1}
+		{\sqrt{7 - x^{2}   }} \, \mathrm{d} x
+		$\\
+		And I rather leave this one (no solution) for some quick practice
+		\end{pr}
+		
+		\begin{pr}
+		Solve for an indefinite integral : $ \int_{x=0} ^{x=\infty}
+			\frac{\lambda}
+			{2 \pi \epsilon_0} \, \cos\theta \, \frac{dx}{y^2 + x^2} $
+			I think it wouldn't be wrong to do a definite integral though.
+			\end{pr}
+
+		\begin{pr}
+Don't solve it rigorously, but look for the potential approaches that you think would work : $ \int \frac{x}
+                                                                                                                                                                {	( x^2 + k^2) ^ {\frac{3}{2}} } \, \mathrm{d}x $
+                                                                                                                                                                \end{pr}
+
+\begin{sol}
+We can see the $9 + x^2$ part make a nice match with the tan coefficient. It's not always necessary to have a perfect square in that position of 9, its something like 7, then write it as $a^2$ during the math and at the end deal with the a as a simple $\sqrt{7}$. This fact is also usable in very special cases if done properly, but not shown here.\\
+So write the 9 as $3^2$ and we're done.
+\[ \int \frac{1}{3^{2} + x^2} \, \mathrm{d} x \, = \, \frac{1}{3} \tan ^{-1}
+ 																									 (\frac{x}{3}) \, + \, C \]
+
+\end{sol}
+
+\begin{sol}
+It looks scary, but whenever you see some symmetry, try if u-substitution works or not. We see the symmetry of the numerator and the denominator. 
+\[ 
+ \int \frac{\sin ^{-1}x}{\sqrt{1 - x^2}} \, \mathrm{d} x 
+ \]
+See that the derivative of $\sin^{-1} x$ is simply $\frac{1}{\sqrt{  1 - x^2      }}$, so
+\[ u = \sin^{-1} x	\; \rightarrow \; du = \frac{1}{\sqrt{  1 - x^2      }} \, dx \]
+\[\int u\, du \, = \, \frac{u^2}{2} \,+\, C \\
+= \frac{(\sin ^{-1}x)^2}{2} \,+\, C\]
+\end{sol}
+
+\begin{sol}
+I myself look forward to apply the idea myself. We have a 9 above that doesn't let us do the u-substitution and again we have an x above that don't let us to factor out anything, so the idea is something to make the previous ideas happen, we do it by breaking the numerator legally. We are able to write that
+\[		\frac{x + 9}{x^{2} + 9}
+		\;
+		=
+		\;
+		\frac{x}{x^{2} + 9} 	+ 		\frac{9}{x^{2} + 9}
+\]
+That enables us to apply the two of our ideas separately, we need to the two integrations,
+\[			\int	\frac{x}{x^{2} + 9} \, \mathrm{d} x	+
+			\int	\frac{9}{x^{2} + 9} \, \mathrm{d}x  \]
+
+For the first one we do the u-sub,because\textbf{ the derivative of the denominator is equal to the numerator}. 
+\[ u = x^{2} + 9 \]
+\[ du = 2x \, dx \]
+\[ x \, dx = \frac{du}{2}
+\]
+Use this and we will have the general case, and the second one to deal is just the coefficient tan one
+\[ \frac{1}{2}	\int	\frac{\mathrm{d}u }{u}
+			\, + \,
+	9 \int \frac{1}{ x^{2} + 9}\, \mathrm{d} x
+    \]
+    \[ = \, \frac{1}{2} ln(u) \, + \, 9\frac{1}{3} \tan ^{-1} (\frac{x}{3})\, +\, C	
+\]
+\end{sol}
+
+
+\end{document}

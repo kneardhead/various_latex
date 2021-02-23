@@ -1,0 +1,754 @@
+\documentclass[a4paper]{article}
+
+%%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+% figure support
+%\usepackage{import}
+%\usepackage{xifthen}
+%\pdfminorversion=7
+%\usepackage{pdfpages}
+%\usepackage{transparent}
+%\newcommand{\incfig}[1]{%
+%	\def\svgwidth{\columnwidth}
+%	\import{./figures/}{#1.pdf_tex}
+%}
+
+\theoremstyle{definition}
+\newtheorem{prob}{ \framebox[0.09\textwidth]{{\sffamily Pr}} }
+
+\newcommand{\pr}[1]{ \begin{tcolorbox} \begin{prob} 
+    #1 
+\end{prob} 
+   \end{tcolorbox}\ 
+   \\
+ }
+\usepackage{geometry}[left = 3.4 cm, right = 3.5 cm, top = 3 cm, bottom = 2 cm]
+%\pdfsuppresswarningpagegroup=1
+\title{Sad Mistakes}
+\author{Ahmed Saad Sabit\footnote{The work starts in the October of 9, 2020}}
+
+\usepackage{tcolorbox}
+\date{\today} 
+\begin{document}
+\section{\textsf{Mechanics and Kinetmatics}}
+\pr{Particle moves in a circle of $R$ radius given the kinetic energy
+a function of the distance traveled. $T = as^2$, find the force as a function of $s$}
+\textbf{Solution:} 
+First of all I took the equation and put that to work,
+    \begin{equation}
+    \frac{1}{2} \, mR^2 \dot{\theta}^2 = a R^2 \theta^2
+    \end{equation}
+    Taking a single time derivative, comes $\theta$ in both the sides and I cut them. 
+    \begin{equation}
+        \frac{1}{2} \, m \ddot{\theta} = a \theta \quad \rightarrow \quad \ddot{\theta} = \frac{2a\theta}{m}
+    \end{equation}
+    Good to notice that $\ddot{\theta}$ is Tangential Angular Acceleration.
+    Multiply $R$ at both the side gives linear,
+    \begin{equation}
+    w_t = \frac{2as}{m}
+    \end{equation}
+    My naive \textbf{first (wrong) answer is} $F = 2as$.
+    \textbf{Mistake:} Goddamn I forgot to use Centripetal Acceleration as always. Even I did this same mistake in front of Ariyan during BDOAA bash. In that curved center of parabola problem.
+    Centri. Acc. is, by the first energy formula
+    \begin{equation}
+    w_c = R \dot{\theta}^2 = \frac{2a \theta^2}{m} = \frac{2a s^2}{mR}
+    \end{equation}
+    Hence, total acceleration is,
+    \begin{equation}
+    w = \sqrt{w_t ^2 + w_n ^2} = \sqrt{ (2as/m)^2 \left(1 + \frac{s^2}{R^2}\right) }
+    \end{equation}
+    Finally, \textbf{Die Richtig Antworten ist,}
+    \begin{equation}
+    F = 2as  \sqrt{1 + \frac{s^2}{R^2}}
+    \end{equation}
+%------------------------ box -------------------%
+\begin{center}
+\fbox{
+\parbox{0.84 \textwidth}{
+\textbf{Idea K35:} It is a must to write the \emph{Centripetal Acceleration} when dealing with Curved trajectories, and according to Mas ruk vai, 
+the Centripetal Acceleration is just the Kinetic Energy.    
+} } \end{center}
+%------------------------ box -------------------%
+\pr{A random cylinder of Radius $R$ and mass $m$ is decsending for Gravity as it was hung by coiling a thread. Find the angular
+acceleration and the tension of the string. Then, find the instantaneous power developed by the gravity.}
+\textbf{Solution:} See sideways on the circle. The $\vec{W}$ works and a tension $\vec{T}$ works on the side, making a torque on the axis cneter. 
+Thinking about the Force only, now,
+\begin{equation}
+mg - T = ma = m \ddot{h}
+\end{equation}
+For a small $\Delta h$ down, we have, $\Delta h = R \Delta \theta$. So,
+$\ddot{h} = \ddot{\theta} R$ .
+Now concentrate on the Torque, $I = (1/2) mR^2$.
+\begin{equation}
+I \ddot{\theta} = TR \quad \rightarrow \quad I \ddot{\theta} /R \quad \rightarrow \quad mR\ddot{\theta} /2  = T
+\end{equation}
+Use this on the force equation, $I = (1/2) mR^2$.
+\begin{equation}
+mg - \frac{mR \ddot{\theta}}{2} = mR \ddot{\theta} 
+\quad
+\longrightarrow
+\quad 
+g = R (1+ 1/2) \ddot{\theta} 
+\end{equation}
+Finally, \textbf{the correct answer,} 
+\begin{equation}
+\frac{2g}{3R} = \ddot{\theta} \qquad \text{(Ang. Acc.)}
+\end{equation}
+\textbf{There are two strings}, so tension should be divided. $T = mR^2/2R \times 2g/3R \times 1/R$, $T = mg/3$.
+\begin{equation}
+T_s = T/2 = mg/6 \qquad \text{(Tension)}
+\end{equation}
+Power is $P = Fv$, so, 
+\begin{align*}
+P &= mg \alpha t\\ 
+&= mg R \ddot{\theta} t \\
+&= \frac{2}{3} mg^2 t \qquad \text{(Power)} 
+\end{align*}
+\pr{Particle moves from $\vec{r_1} = \hat{i} + 2 \hat{j}$ to $\vec{r_2} = 2 \hat{i} - 3 \hat{j} $,
+by a force $\vec{F} = 3 \hat{i} + 4 \hat{j}$. Units are $SI$, find work done.}
+\textbf{What I did:} Not knowing what to do.\\
+\textbf{Solution:} Work is a dot product. The work is \textbf{path independent}
+and here force is a constant. No need to use $W = \int \vec{F} \dot d\vec{r}$.
+\begin{align*}
+W =& \vec{F} \cdot \Delta \vec{r} \\
+=& (3 \hat{i} + 4 \hat{j} ) \cdot (\vec{r_2} - \vec{r_1}) \\
+=& (3 \hat{i} + 4 \hat{j} ) \cdot ( 2 \hat{i} - 3 \hat{j} -
+\hat{i} - 2 \hat{j} ) \\
+=& (3 \hat{i} + 4 \hat{j} ) \cdot ( \hat{i} - 5 \hat{j}) \\
+=& (3 \times 1) + (4 \times (-5)) \\
+=& -17
+\end{align*}
+So, $W = -17\,J$. I recall, $ \vec{a} \cdot \vec{b} = a_xb_x + a_yb_y $\\
+%-------------------------------------------------------------------%
+\pr{There is a random hill that has random surface and height $h$. Force $\vec{F}$ is always tangential
+to the surfaceand the fricion coefficient is $k$, base length is $l$. Mass is $m$. Find the work performed.}
+\textbf{What I did:} I could assume $f = NK = mg \cos \theta K$, the force vectors horizontal projection is always required, thats why, the work for friction is $W = Kmgl$ \\
+\textbf{Solution:} At any random point on the hill, the $ds$ is along the curve
+\begin{equation}
+dW = f \,ds
+\end{equation}
+So, integrating this and continuing to 
+mess with the equation, we can have a path independent integral.
+\begin{align}
+W =& \int mgK \cos \theta ds\\ \notag
+=& \int mgK ( ds  \cos \theta)\\\notag
+=& \int mgK dx \\\notag
+=& \;v mgK \int dx
+\end{align}
+Only the X axis projection, 
+\begin{equation}
+W = mgK \int_{0}^{l} dx = mgKl
+\end{equation}
+For the height gain, we gain potential,
+\begin{equation}
+W = \int mgK \sin \theta ds \quad \rightarrow \quad W = mgh
+\end{equation}
+Total work,
+\begin{equation}
+W = mg (h + Kl)
+\end{equation}
+
+
+
+\pr{There is this inclined path with a block on the top, dimentions are know and everything is frictionless.
+You are supposed to find the \emph{Maximum Speed gained} by the mass (incline) $M$.}
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/blockandcurve.png}
+    \caption{The ramp}
+    \label{ }
+\end{figure} 
+\textbf{Solution:}
+The total energy will be constant, hence, 
+\[ E = mgr \]
+Now as the momentum is conserved, the point when the block reaches the other end maximum height, the $x$ direction momentum transferred to
+the whole system, causes the $CM$ to move at, 
+\[v_{cm } =\frac{m \sqrt{2 g r} }{M + m} \] 
+When the block is at the lowest point for the first time, (meaning just after moving from the initial state), till there,
+CM could not move because the CM shifted rightways, but the wall (vertical ) resisted the CM from moving. But after the block has crossed
+the lowest point (moving towards the right peak), there is this momentum being transferred to the ramp. 
+
+After making it to the first rightside peak, then the block starts to fall to the bottom, then, the CM will still be moving at a 
+constant speed, so if the block is moving leftwards, then the ramp must have some extra rightwards speed to gain stability for the CM. 
+
+Hence, \textbf{the system of ramp will have the most speed when the block has reached the bottom most point for the second
+time.} 
+
+At the bottom most point, by energy and momentum conservation, respectively, 
+\begin{equation}
+    \frac{Mv_m ^2 }{2} + \frac{ mv_0^2}{2} = mgr 
+\end{equation} 
+\begin{equation}
+M v_m - m v_0 = m \sqrt{2 gr} 
+\end{equation} 
+Simplifying the momentum equation gives us, 
+\[ v_0 = \frac{ M v_m - \sqrt{2 gr }m  }{ m }\] 
+Plugging at the energy equation, 
+\[ \frac{Mv_m ^2 }{2} + \frac{ m}{2} \left( 
+    \frac{ M v_m - \sqrt{2 gr }m  }{ m }    
+\right)^2  = mgr   \]
+Well, this needs to be simplified to the end, the final answer is found to be the solution of $v_m$ and that turns out be ,
+\[v_m = 2 \frac{ m }{ M+ m  }\sqrt{2gr}\]
+
+
+
+%------------------------ box -------------------%
+\begin{center}
+\fbox{
+\parbox{0.84 \textwidth}{
+writing the Momemntum and Energy conservation law, only for the special points on whom we are interested in,
+and only whom we are aware of (for sake of the solution to the equation. )
+} } \end{center}
+%------------------------ box -------------------%
+
+
+
+\pr{What is the Normal Force of the step corner and the ball (cylinder) and from which point will the cylinder lift
+off first?}
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/stairstepball.png}
+    \caption{For the stair way problem.}
+    \label{a }
+\end{figure} 
+
+\textbf{
+    Solution:}\\
+Therre are some obnoxious things about this problem, what happened is, 
+\begin{enumerate}
+    \item The cylinder mass is causing the block to move, not any third party pushing the block, this is what the solution assumed in order to be correct.
+    \item Damn energy and stuffs stay conserved. 
+    \item The problem text in Kalda says some rotation stuffs I don't understand.
+\end{enumerate} 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.5 \textwidth]{../UaDrawings/PNGCairo/stgeoball.png}
+    \caption{The small geometry over the cylinder's radius and angles made by the corners.}
+    \label{ }
+\end{figure} 
+Now, as the ball rolls over, general geometry shows that, 
+\[d = 2 r\sin \alpha \] 
+By taking a derivative, 
+\[v= 2r \cos \alpha \frac{v_r}{r}\]
+In this case, the $d = \sqrt{2}$, thus, $\alpha = \pi/4$. This leaves us with, $\cos \alpha = \frac{ 1 }{ \sqrt{2} }$. 
+Hence, 
+\[v_c = \frac{ \sqrt{2}v }{ 2 }\]
+Now, we need to solve for the $v$ that has popped up in here. The realization is that the cylinder
+forces the block to move and that is the force that gains the speed in the system, not \emph{any third person pushing}. 
+
+From energy consideration, initially the cylinder is at hight of $r$ and after some movement, it comes down because of the rolling
+by angle $\alpha$. 
+
+We want to find the potential energy and taht turns to become kinetic.'
+
+\[mgr - mgr\cos \alpha = \frac{ 1 }{ 2 } m (v^2 + v_c^2)\]
+
+We want to know the $v_c$, thus replace the $v$ with $\frac{ 2v_c }{ \sqrt{2} }$. 
+
+\[ mgr (1 - \frac{ 1 }{ \sqrt{2} }) = \frac{ 1 }{ 2 } m \left( \frac{ 4 v_c^2  }{ 2 } + v_c^2  \right) \] 
+
+So this will solve for the $v_c$, now, the centripetal acceeration,
+\[ C = m \frac{ v_c^2 }{ r } \] 
+The normal force will be the projection of the Newton's second law (weight $mg$) and thus,
+\[ N = \frac{ mg }{ \sqrt{2} } - m \frac{ v_c^2 }{ r } \]
+This is enough and noticing carefully there is nothing left.
+
+\subsection{\textsf{Idea Revisions}}
+\textsf{\textbf{Pr02, Pr03, Pr01, Pr13}}:\\
+ \emph{Idea} 02: Literally any point anywhere on the space can be considered the axis for Torque points. Remember how the boy pulls the rope, or how the trapezoid structure can behold force, or the manner how an inclined ladder rests on a wall. \\
+\textsf{\textbf{Many mechanics problem}}:\\
+ \emph{Idea} 05: Forces and other vector quantities can be blindly analyzed in the vector manner and the geometry (Thales, Tangent, Circle, Rotation, Required Triangles, Vector multiplication) can be applied. Remember the Electric Line - Arc problem, and many other. \\
+\textsf{\textbf{Some kostokor friction based problems:}}\\ Even friction and Normal Forces are vectors and these two pair make a nice Right Angled Triangle with known angle with $\tan \theta = \mu$. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textsf{\textbf{Pr05, Pr06, Pr10}}:\\
+ \emph{Idea} 06: If a body is about to slip off, then the sum of the friction force and the reaction force is angled by $\arctan \mu$ from the surface normal.
+\textsf{\textbf{Pr05, pendulum in accelerated frame problems}}:\\
+ \emph{Idea}08: The net of the inertial and gravitational force can act like "Effective" Gravitational Force. \\
+\textsf{\textbf{Pr06}}:\\
+ \emph{Idea} 09: Some times moving to the rotating frame of reference where the $m \vec{g}$ is also rotating respect, can help. \\
+\textsf{\textbf{Ladder Wall case} }\\
+: \emph{Idea} 14: IF there is $3$ forces separately acting on a body, then let us apply the \emph{Idea} 02 from above (on random torque axis points), for static case, we can of course choose a nice point where the force are radially pointing to the point. That means, for static case, the force lines meet somewhere. This is cool, static force triples Action line meet at a point. 
+
+For two force case, the line must be same. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\textsf{\textbf{Moving stuffs and Friction}}:\\
+ Fact 21: Friction can only act if there is more than 1 surfaces. ( I dispute what effect the shape has to do with it, or how to derive the $\mu$). The friction is always antiparallel to hte velocity of point in frame of friction causing surface. \\
+\textsf{\textbf{Pr12, Pr13, Effective Spring constant}}:\\ \emph{Idea} 17: It is useful to force balance at interesting separate points one by one. \\
+\textsf{\textbf{Ropes}}:\\
+ \emph{Idea} 18: For heavy ropes, the curvature is often negligible. \\
+\textsf{\textbf{The ability to think in several ways for the same thing is often necessary. Please act non Biased. }} \\
+\textsf{\textbf{Forces and Potentials}}:\\ \emph{Idea} 25: The surface of a liquid in equilibrium shall take an \textbf{Equipotential Shape}. Energies are same. Small perturbations can exist. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textsf{\textbf{Dynamical stuffs}}:\\ \emph{Idea} (me): Working out the geometry and taking it's derivative might play the toughest rule in a problem. \\
+\textsf{\textbf{Pr23}} \\
+: \emph{Idea} 30: Analyze the tension or any sort of material force by considering the deformation on matter. This is applicable like for instance, a Rod and it's deformation to find the tension. \\
+\textsf{\textbf{Pr24, Pr26, P27, numerous dynamic Strings and Block matters. }}:\\ \emph{Idea} 31: Right after the motion, the shift vector is parallel to the force acting on it.\\
+\textsf{\textbf{Pr24, Pr26, P27, numerous dynamic Strings and Block matters. }}:\\
+ \emph{Idea} 32: If bodies are connected by a rope or a rod or perhaps a pulley or one is supported by the other, then there is a linear arithmetic relation between the bodies shift's (and velocities, accelerations) that describes the fact that length of the string (rod, etc.) is constant. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textsf{\textbf{Pr40}}:\\
+\emph{Idea} (me): For water flow, please keep in head whether the things will give a Laminar Flow or a Turbulent Flow. 
+Laminar will have Energy conserved and Turbulent will have just momentum conserved. \\
+\textsf{\textbf{Pr43}}:\\
+For curved and anything like that, use the Tensor and Analytic Geometry skills and find out the Radius of Curvature then the Centripetal Acceleration. Centripetal Acceleration might reduce the normal force and reduce the friction, so the work done.\\
+\textsf{\textbf{Pr49}}:\\
+For cases of the Acceleration and Time relation, the only simple kind of solution is to dissolve the math into a 1/4-th or Quarter of the full period of oscillation.  
+
+
+
+
+\section{\textsf{Thermal Physics}}
+%-------------------------------------------------------------------%%-------------------------------------------------------------------%
+\pr{Derive the fact that the internal energy of some random gas is $ pV/ \gamma - 1 $, and
+also show that for general case, $\frac{i}{2} R = C_v$} 
+\textbf{Solution to above two problems: The Idea of Molar Heat Capacities:} I have to regenralize it from the beginning, one of the astounding fact that made me love Thermodynamics, refer to Irodov and all other text book and stuff. \\
+So, from the Equipartition of Energy Theorem, we at first keep in mind that Energy is dependent on the Quadratic (2nd Power) of a Variable. Thus, let, 
+\[ E = \alpha x^2 \]
+Remember meanwhile, 
+\begin{equation}
+P(\epsilon) = c e^{-\beta \epsilon} 
+\end{equation}
+If $\epsilon = \epsilon(x)$, then, $P(\epsilon) = P(x)$, a commonsense that don't easily work in time. 
+
+
+$x$ is just some random variable, not necessarily distance or so. Now, the Canonical Probability of Having energy $E$ is proportional to the Boltzmann factor $\beta$. Thus, from normalization view, the probability $P(x)$ of the system having energy $\alpha x^2$ is proportional to the Boltzmann factor $e^{-\beta \alpha x^2}$. Knowing with the constant $c$, $P(x) = c e^{-\beta \alpha x^2 }$ So,
+\[ \int_{-\infty}^{\infty} P(x) \, dx = 1 = c \int_{-\infty}^{\infty} e^{-\beta \alpha x^2 } \, dx \quad \rightarrow \quad c = \frac{1}{\int_{-\infty}^{\infty} e^{-\beta \alpha x^2 }}\]
+\begin{align*}
+\langle E \rangle =& \int_{-\infty}^{\infty} E \, P(x) \,dx \\
+=& \frac{\int_{-\infty}^{\infty} \alpha x^2 e^{-\beta \alpha x^2 }}
+{\int_{-\infty}^{\infty} e^{-\beta \alpha x^2 }} \\
+=& \frac{1}{2 \beta} \\
+=& \frac{1}{2}kT 
+\end{align*}
+So every independent variable of dynamical system (Degree of Freedom) can be assigned a $1/2 kT$. This is amazing, for $i$ such freedom we can assign, $\frac{\langle i \rangle}{2} kT $ 
+That's why, 
+\begin{equation}
+\langle E \rangle = \frac{\langle i \rangle}{2} kT 
+\end{equation}
+So, the Total Energy of $N$ molecules at $T$ is given by, keeping $pV = NkT = nRT$ in mind, 
+\begin{equation}
+E =  \frac{\langle i \rangle}{2} NkT =  \frac{\langle i \rangle}{2} nRT 
+\end{equation}
+Now let us move to some constructive work, \\
+\textbf{Heat Capacity :Isochoric (Molar)} \\
+From the 1st Law of Thermodynamics, 
+\begin{equation}
+\Delta E = \Delta Q - \Delta W 
+\end{equation}
+For the case the $W$ work is done by the system. So, 
+\[  \frac{\langle i \rangle}{2}nR \Delta T = \Delta Q - \Delta W \]
+Let us find the \emph{Heat Capacity at constant Volume}, $C_v$, constant volume tells that $\Delta W = 0$, so, 
+\begin{align*}
+&\frac{\langle i \rangle}{2}nR \Delta T = \Delta Q \\
+& \frac{\langle i \rangle}{2}R = \frac{\Delta Q}{n \Delta T} \\
+& \frac{\langle i \rangle}{2}R = C_v
+\end{align*}
+So, the heat capacity of isochoric system is $C_v = \frac{\langle i \rangle}{2}R$.\\
+\textbf{Heat Capacity :Isobaric (Molar)} \\
+This case, pressure stays constant and let's us write that, $\Delta W =  p \Delta V = nR \Delta T $. So, 
+\[ \frac{\langle i \rangle}{2}nR \Delta T = \Delta Q -nR \Delta T \]
+Now a bit simplifying, 
+\begin{align*}
+& \frac{\langle i \rangle}{2}nR \Delta T + nR \Delta T = \Delta Q \\
+& \frac{\langle i \rangle}{2}R + R = \frac{\Delta Q }{n \Delta T} \\
+&  \frac{\langle i \rangle}{2}R + R = C_p 
+\end{align*}
+So, the heat capacity of isobaric system is $C_p = \frac{\langle i \rangle}{2}R + R$.\\
+\textbf{Ratio of Heat Capacity $\gamma$:} \\
+We know that this adiabatic entity, putting what we learnt
+\begin{align*}
+\frac{C_p}{C_v} =& \gamma \\
+\frac{ \frac{\langle i \rangle}{2} R + R } { \frac{\langle i \rangle}{2} R} =& \gamma \\
+1 + \frac{2} { \langle i \rangle } =& \gamma \\
+ \frac{ \langle i \rangle }{2} =& \frac{1}{\gamma - 1}
+\end{align*}
+So, internal energy can be written in this manner,
+\begin{equation}
+E = \frac{\langle i \rangle}{2} nRT = \frac{\langle i \rangle}{2}pV = \frac{pV}{\gamma - 1}
+\end{equation}
+Writing tonight was an absolute fun for me :)
+%-------------------------------------------------------------------%
+\pr{In which case will the efficiency of a Carnot Cycle be higher? For increasing the hot thermal
+reservoir temperature by $\Delta T$ or reducing the cooler one by $\Delta T$ ?}
+\textbf{Solution:}\\ As we know that the efficiency is written as,
+\[ \eta = 1 - \frac{T_c}{T_h} \]
+That's why, hot plus delta and cold minus delta,
+\[ 1 - \frac{ T_c - \Delta T}{T_h} \quad and \quad 1 - \frac{T_c }{T_h + \Delta T} \]
+That happens to be, 
+\[ \frac{T_c - \Delta T - T_h}{T_h} \quad and \quad \frac{T_c - \Delta T - T_h}{T_h + \Delta T} \]
+So, the denominator being equal, heating up the hot resorvoir will give lower efficiency.
+\pr{Why the total integration of the Clausius Inequality is lesser of equal to zero?}
+
+%-------------------------------------------------------------------%
+\pr{How Degrees of Freedom if the Gas molecules
+have (in standard conditions) density $\rho$ and sound propagation speed $v$ ?}
+
+%-------------------------------------------------------------------%
+\pr{One mole of a certain ideal gas
+is contained under weightless piston of a vertical cylinder at temperature $T$.
+The space over the piston opens open to the atmosphere. What amount of work has to be performed so that
+isothermally the gas volume increase  $n$ times by slowly raising the piston?}
+%-------------------------------------------------------------------%
+\pr{Calculate what fraction of Molecules, \\
+a) traverse without collision exceeding the mean free path. \\
+b) mean free path within $\lambda$ and $2\lambda$.}
+\textbf{Solution:} \\
+We know that, 
+\begin{equation}
+N/N_0 = e^{- x/\lambda} 
+\end{equation}
+So, the ratio of particle with mean free path infinite, $N/N_0 = 0$. Mean free path till $\lambda$ at max $1/e$. So, all that fall within $ \lambda < x $
+\[ \Delta N / N_0 = 1/e \]
+Now those who are at max $2\lambda$ and least $\lambda$ are,
+\[ \Delta N / N_0 = \frac{1}{e^{\lambda / \lambda}} -  \frac{1}{e^{2\lambda / \lambda}} = \frac{1}{e} - \frac{1}{e^2} \]
+
+\begin{center}
+\fbox{
+\parbox{0.8\textwidth}{
+The percentage of particles that are free in the boundary of $0$ to $x$ without colliding is $e^{- x/\lambda} $ where $\lambda = \frac{1}{\sqrt{2}An}$ . We can add them and subtract them logically. }}
+\end{center} 
+ One method that makes sense is just taking the derivative and again taking an integral, the net effect is zero but it helps.
+ \begin{align*}
+ \frac{dN}{dx} &= -N_0/ \lambda e^{-x/\lambda}\\
+ dN &=  -N_o/\lambda \int_{x = a}^{x = b} e^{-x/\lambda} \, dx \\
+ \Delta N/ N_0 &= \left[\frac{1}{e^{-x/\lambda}}\right]_{a}^{b}\\
+ \Delta N/ N_0 &= \left[ \frac{1}{e^{-b/\lambda}} - \frac{1}{e^{-a/\lambda}} \right]
+ \end{align*}
+%-------------------------------------------------------------------%
+\pr{ A vessel contains a monoatomic gas at $T$. Use the Maxwell Boltzmann Speed Distribution to calculate the mean kinetic energy of the molecules. \\
+Now do the same for those molecules that are effused into a evacuated box.}
+\textbf{Solution:} \\  It is quite important to remember that, 
+
+\begin{center}
+\fbox{
+\parbox{0.8\textwidth}{
+The speed distribution for the effused particle is proportional to 
+\begin{equation}
+v^3 e^{-mv^2 /2kT}
+\end{equation} }}
+\end{center} 
+Now, \[ \int_{0}^{\infty} f(v) \, dv = 1 \]
+That also gives a way to normalize in this manner, 
+\[  \int_{0}^{\infty} \alpha v^3 e^{-mv^2 /2kT} \, dv = 1 \quad \alpha = \frac{1}{\int_{0}^{\infty} v^3 e^{-mv^2 /2kT} \, dv}\]
+The kinetic energy for effused particle shall be, 
+\[ \langle v^2 \rangle = \int_{0}^{\infty} v^2 f(v) \, dv \]
+\[ |KinEn| = 1/2m \times \langle v^2 \rangle = 1/2 m \frac{\int_{0}^{\infty} v^5 e^{-mv^2 /2kT} \, dv}{\int_{0}^{\infty} 
+v^3 e^{-mv^2 /2kT} \, dv} \]
+Using integral table, 
+\[ \langle Kin En \rangle = 2kT \]
+Now, for the monoatomic, in free space we already know, 
+\[ \langle Kin En \rangle = 3/2 kT \]
+So, energy being conserved should make the both equal, hence,
+\[ 2kT' = 3/2 kT \]
+That gives, $T' = 1.33T $. Remarkably, for that sad Kalda Thermal Problem that took me
+4 days of thinking to do a Three-Line math, the same answer gives $T' = 1.4 T$. That should be include ASAP. \\
+%-------------------------------------------------------------------%
+\pr{A closed vessel is partially filled with
+liquid mercury. There is a hole above the liquid with area $A$ and it
+is placed at a region of High Vacuum at $T$ and after 30 days it was found that it was lighter by $\delta m$.
+Estimate the vapour pressure of mercury at $T$. We know the relative molecular mass of mercury.}
+\textbf{Solution:} \\ Understand what is happening here. We know that the rate of hitting by molecule per unit area of a
+gas is Flux $\Phi$. Thus, total mass lost by a whole per unit time is $m \Phi A = m \frac{dN}{dt} = \frac{dM}{dT}$. Because
+mass of $N$ molecule is $Nm$.
+
+We know that, \begin{equation}
+\Phi = \frac{p}{\sqrt{2 \pi m kT}} 
+\end{equation}
+Using the idea we can write that the pressure inside the container (that is the molecules average pressure made on the surface of the container by continuous collision, is also vapour pressure),
+\[ p = \sqrt{ \frac{2 \pi KT}{m} } \frac{1}{A} |\frac{dM}{dt}| \]
+This can give the Vapour Pressure, that is just simply the existing pressure inside the container by evaporated material.
+%-------------------------------------------------------------------%
+\pr{Show that the time dependence of the pressure inside an oven with a small hole containing hot gas, 
+\[ p(t) = p(0) e^{-t/\tau} \]
+If, \[\tau = \frac{V}{A} \sqrt{\frac{2 \pi m}{kT}}  \]}
+\textbf{Solution:} \\ This will be a worth while writing. I started thinking that as there is $V$ in the equation, we can put the raw IGE in the solution. It has magic in it, that it never lets me down. 
+\[ p V = NkT \]
+Took a time derivative,
+\[ \frac{dp}{dt} = \frac{K}{V} \left(T \frac{dn}{dt} + n \frac{dT}{dt} \right) \]
+I had to think for quite a whole lot of time what to do. But my brain did spark the fact that we can for now, as it is an oven, has constant temperature, so that some work can be enabled that makes us near to the solution, thus, if $dT/dt = 0$, we have considerable simplification,
+\[ \frac{dp}{dt} = - \frac{kT}{V} \frac{dN}{dt} \]
+Hopefully that $dN/dt$ is just the $\Phi A$, the number of molecules getting out per unit time. This has also enabled me to put in the $ \frac{pA}{\sqrt{2 \pi m kT}}  $, so what I was left with,
+\[ \frac{dp}{p} = \frac{A}{V} \sqrt{\frac{kT}{2 \pi m} } dt \]
+Integrated that,
+\[ \ln p/p_0 = \frac{A}{V} \sqrt{\frac{kT}{2 \pi m} } t \]
+That if well regarded finds us out that,
+\[ p = p_0 e^{-t/\tau} \]
+One of the solution I happily solved. Thermals are awesome from the first.
+
+
+
+
+
+\section{\textsf{Electricity}}
+
+\pr{What is the $E$ field arbitrarily above a string that has $\lambda$ linear charge density at distance $r$?}
+\textbf{Solution:}\\ The idea is that the arbitrarity can be broken to two parts that are right angle triangles. Well that is actually nice simplification. 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8\textwidth]{../User/electricwirefield.png}
+\caption{High Quality Drawing for arbitrary charge}
+\end{figure}
+We are at one ends above where we want to measure the field. The angle made from that point to other end of tread is $\theta _0$. For a charge density (linear) $\lambda$,
+we can tell that, 
+\[dE_{\perp} = dE \cos \theta = \frac{k \lambda \, dx}{r^2} \cos \theta \]
+That is made by a small charge $dq = \lambda \ dx$. 
+\begin{align*}
+&dx = \frac{r d \theta}{\cos \theta}  
+&r = \frac{h}{\cos \theta} \\
+\therefore  &dx= \frac{h \, d\theta }{\cos ^2 \theta} 
+&r^2 = \frac{h^2}{\cos ^2 \theta} 
+\end{align*}
+%-------------------------------------------------------------------%
+Put whatever wherever necessary, 
+\[ dE_{\perp} = \frac{k \lambda h d \theta \, \cos ^2 \theta }{\cos ^2 \theta h^2} (\cos \theta) \]
+That is, 
+\[ \int dE_{\perp} = \frac{k \lambda}{h	} \int_{0}^{\theta _0} \cos \theta \, d \theta \]
+Finally, 
+\[ E_{\perp} = \frac{k \lambda}{h} \sin \theta _0 \]
+
+We have to concentrate on the field parallel to the string now. If you have followed till here, it is easy to notice, 
+\[ dE_{=} = \frac{k\lambda}{h} (\sin \theta) d \theta \]
+The integration from $0$ to $\theta _0$ gives, 
+\[E_{=} = \frac{k\lambda}{h} (1 - \cos \theta _0)\]
+\begin{center}
+\fbox{ \parbox{0.8 \textwidth} { 
+\begin{align}
+E_{\perp} =& \frac{k \lambda}{h} \sin \theta _0 \\
+E_{=} =& \frac{k\lambda}{h} (1 - \cos \theta _0)
+\end{align}
+}
+}
+\end{center}
+%-------------------------------------------------------------------%%-------------------------------------------------------------------%
+%-------------------------------------------------------------------%%-------------------------------------------------------------------%
+\pr{What is the $E$ field that is above a charged circular ring?}
+%-------------------------------------------------------------------%
+\pr{What is the meaning of the famous confusion material electric field equation?}
+
+\pr{A sphere of radius $r$ carries a surface charge density
+$\sigma = \vec{a} \cdot \vec{r}$ where $\vec{a}$ is some constant vector. $\vec{r}$ is a radius
+vector. Find the $E$ field is at the center of the sphere.}
+%-------------------------------------------------------------------%
+\textbf{Solution:} \\
+We have to know what $\vec{a}$ vector is. This is  just a vector, with whom the dot is going to give the charge density. 
+\[ \vec{a} \cdot \vec{r} = ar \cos \theta \]
+This is that Physics Cup apathy dipole thing. 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8\textwidth]{../User/polele.png}
+\caption{The vectorally charged entity}
+\end{figure}
+Now, the sphere has become some what a kind of a dipole, we could use the superposition technique but it still works fine and makes some clear sense. Let us divide the sphere into some infinitesimal rings with $dA = (2 \pi r') r \, d\theta$. Hence, 
+\[ dq = \sigma dA = \sigma (2 \pi r') r \, d\theta = (\vec{a} \cdot \vec{r}) (2 \pi r \sin \theta) r \, d\theta \]
+This after putting $ \vec{a} \cdot \vec{r} = ar \cos \theta $ becomes that, 
+\[ dq =( 2 \pi a )r^3 \sin \theta \cos \theta d\theta \]
+To proceed, notice that this ring is same as the electric problem of $E$ above a ring of radius $R$ at a distance $l$. One part of the sphere has positive charge and one side has negative, for this, the elctric field should point against the $\vec{a}$, if a nice diagram made. 
+
+For the ring case, we know, 
+\begin{equation}
+E = \frac{k q l}{(l^2 + R^2)^{3/2}}
+\end{equation}
+Here, we can see, 
+\begin{align*}
+l =& r \cos \theta  &l^2 = r^2 \cos ^2 \theta \\
+R =& r \sin \theta  &R^2 = r^2 \sin ^2 \theta 
+\end{align*}
+Put everything together for a small $\vec{E}$, 
+\begin{align*}
+d\vec{E} =& \frac{k \, dq \, l}{(l^2 + R^2)^{3/2}} \hat{E}\\
+d \vec{E} =& \frac{k ( 2 \pi a )r^3 \sin \theta \cos \theta d\theta \, r \cos \theta }
+{( r^2 \cos ^2 \theta +  r^2 \sin ^2 \theta )^{3/2}} \left( \frac{\vec{-a}}{a} \right)\\
+\int d\vec{E} =& 
+2 \pi k a r 
+\int_{0}^{\pi} \sin \theta \, \cos ^2 \theta \, d\theta \left( \frac{\vec{-a}}{a} \right) \\
+E =& \frac{ 2 \pi a r \vec{a}}{4 \pi \epsilon_0 a} \left(\frac{2}{3}\right) 
+\end{align*}
+What we have is, as the answer, 
+\[ E = -\frac{\vec{a} r}{3 \epsilon_0}\]
+
+%-------------------------------------------------------------------%
+\pr{There are two charge $-q$ and $q$ that are $2l$ distance apart. At
+the center there is a circle disc of radius $R$. Find the Flux $\Phi$ through the disc.}
+\textbf{Solution:} I thought that my solution was just a silly game of equations and assumptions but it did work out. \\
+From superposition principle, we have clarified that few fields are just same as the total net. Goes linearly for fluxes. I thought that a Huygen Wavelet is going to pass through the circle. There will be a bump over the disc that is the part of the sphere, the bump of the sphere has equal flux as the disc. 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8 \textwidth]{../User/flux.png}
+\caption{Try to imagine in three dimension about electric flux}
+\end{figure}
+
+The area of the spherical part is found withing the range of $ 0 \rightarrow \theta$ where $\theta = \arctan R/l$. The radius is $R$ for sure. Hence, we take this integration, 
+\begin{align*}
+dA =& (2 \pi r) \, r d\theta \\
+=& 2 \pi R \sin \theta \, R d \theta \\
+A =& 2 \pi R^2 \int_{0}^{\arctan R/l} \sin^2 \theta d \theta \\
+A =& 2 \pi R^2 \left(1 - \cos \arctan R/l \right) 
+\end{align*}
+Flux has to be the $2EA$ as there are two charge and $E$ constant for sphere. But it is silly to note that, 
+\[ \cos \arctan R/l = \cos \theta _m = \frac{l}{(R^2 + l^2)^{3/2}} \]
+\begin{equation}
+\Phi = 2EA = \frac{q}{\epsilon _0} \left(1 -\frac{l}{(R^2 + l^2)^{3/2}} \right)
+\end{equation}
+Hopefully no fruitless integration involved. Geometry works most the time.
+%-------------------------------------------------------------------%
+\pr{ Suppose the surface charge density over a sphere of Radius $R$ depends on the polar angle 
+$ \sigma = \sigma _0 \cos \theta $. Show that this can be represented by a small shift of two charge balls, find electric field
+inside it using this method.
+}
+
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ Ball $R$, charged uniform $\rho$, find the $flux$ across the ball's section formed by the plane located at a distance 
+$r_0$, small than radius.}
+
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ An infinitely long cylindrical surface of a circular cross section is uniformly charged lengthwise with the surface charged
+ensity $\sigma = \sigma _0 \cos \phi$, where $\phi$ is the polar angle of the cylindrical coordinate system whose $z$ axis coincide with the
+cylinder surface. Find magnitude and direction of $E$ strength vector on the $z$ axis. 
+}
+
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ $\vec{E} = \vec{E}(x,y)$, according to the law 
+\[ \vec{E} = a \frac{ x \hat{i} + y \hat{j} }{x^2 + y^2} \]
+In the axis center located a $R$ sphere, now find the flux across it.  
+}
+
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ A space filled up with a charge of volume density $\rho = \rho _0 e^{-\alpha r^3} $, with constants. Find the magnitude
+of the electric strength vector as a function of $r$, investigate results for $ar^3 <<1$ and $ar^3 >>1$. (Comes out an integral I don't know
+how to solve).  }
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ A cubical shape made of plastic that has known thickness $\alpha l$ and side $l$ has been given total charge $Q$. Now find
+the surface charge density as function of position. Assume constants relating to material and other obvious things known.}
+
+
+%-------------------------------------------------------------------%
+
+
+
+\pr{ A cubical shape made of metal that has known thickness $\alpha l$ and side $l$ has been given total
+cprthe surface charge density as function of position. Assume
+constants relating to material and other obvious things known. 
+}
+
+\pr{Capacitor of C is charged, by battery of $\xi$. Now tell 
+what will be the heat dissipation?}
+\textbf{Solution:} \\
+There will be some work done by the battery.
+\[ E = q \xi = C \xi ^2 \]
+And there is some energy stored in the capacitor. 
+\[ E_C = \frac{C \xi}{2} \] 
+The difference between them is the dissipated as heat. 
+Hence, 
+\[ H = E - E_C = C \xi ^2 - \frac{C \xi }{2} \] 
+So, the energy dissipated as heat, 
+\begin{equation}
+H = \frac{ C \xi^2}{2} 
+\end{equation}
+\pr{Capacitor $C$ charge is so that the potential is $V_0$.
+Now it is series with Resistance $R$ and a diode that 
+becomes a conductor after the potential difference across it
+reaches $V_d$. }
+
+\textbf{Solution:} \\
+
+
+
+
+
+
+
+
+
+
+
+
+\section{\textsf{Magnetism}}
+\pr{   
+What is the $B$ field arbitrarily above a string that has $I$ current at distance $r$? 
+}
+
+\textbf{Solution:} \\ As we have faced the Electric one, this one tends to be easier, refer to the same figure of charged string. 
+\begin{equation}
+d \vec{B} = \frac{\mu _0 I}{4 \pi} \frac{ d \vec{l} \times \hat{r}} {r^2}
+\end{equation}
+To continue with the math, remembering $dx/r^2 = d \theta / h$. This is just the division of that that four equation alignment in electric part. The, \[d \vec{l} \times \hat{r} = dx \times \sin \theta ' = dx \sin (\theta + 90^{\circ} ) \]
+Integration nicely yields, 
+\begin{align*}
+\int dB =& \frac{\mu _0 I}{4 \pi} \int_{0}^{\theta _0} \cos d \theta \\
+B=& \frac{\mu _0 I}{4 \pi} \sin \theta
+\end{align*}
+%-------------------------------------------------------------------%
+\pr{    
+What is the $B$ field that is above a current circular ring? 
+}
+\pr{
+permanent magnet has the shape of a sufficiently thin disc magnetized along it's axis. The radius of
+the disc is $R$. Evaluate the magnitude of a molecular current $I'$ flowing along the axis of the disc.
+If the magnetic induction at the point on the axis of the disc, lying at a distance $x$ from it's center is equal to $B$. 
+}
+\pr{
+A round current carrying loop lies in the plane boundary between magnetic and vacuum. The permeability of the magnetic is
+equal to $\mu$. Find the magnetic induction $\vec{B}$ at an arbitrary point on the axis of the loop if in the absence of the magnetic
+induction at the same point is equal to $\vec{B_0}$. Generalize the obtained result to all points in the field.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

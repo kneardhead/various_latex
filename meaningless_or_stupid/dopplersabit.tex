@@ -1,0 +1,242 @@
+\documentclass[a4paper]{article}
+
+%%\usepackage[T1]{fontenc}
+%\usepackage{textcomp}
+%\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+% figure support
+%\usepackage{import}
+%\usepackage{xifthen}
+%\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{graphicx} 
+%\newcommand{\incfig}[1]{%
+    %\def\svgwidth{\columnwidth}
+    %\import{./figures/}{#1.pdf_tex}
+%}
+\title{Doppler Effect: Without Sound in First: Part 01 }
+\author{Ahmed Saad Sabit }
+\date{\today} 
+
+\begin{document}
+\maketitle
+    I will take a simple method to introduce Doppler method to someone interested. But at first I shall review few very simple aspects that
+I will constantly be using in this document. \\
+\section{Changing the reference frame consistently}
+So, let us imagine a car is coming towards us at $20 \, km/hr$. Then relative to the car, what is our speed ? Of course $20 \, km/hr$  with 
+respect
+to him, as because, the car thinks he is at rest but we are moving.
+
+Now let there be a kid above the car, and he throws stones towards us, with respect to the car, the speed of the stone is 
+$5 \, km/hr$  , then what will be the 
+speed of the stone measured by us? 
+
+As the car is moving forward, and relative to the car, the stone is moving forward, the speed \textbf{we} will measure will be, 
+\[ 20 + 5 \, km/hr = 25 \, km/hr\]  
+And thus, stones will hit us at $25 \, km/hr$  speed. It's painful. 
+\begin{figure}[hbtp]
+ \centering
+ \includegraphics[width = 0.8\textwidth]{../UaDrawings/PNGCairo/dop21.png}
+ \caption{Initial Case: The box is moving and so as the other object, with relative to the Earth (ground, that is at rest).}
+ \end{figure}
+  
+So, let us clarify the thing to something more mathematical, it will be denoted as follows, 
+
+Let there be an object moving at a velocity of $\vec{v}_0 $  and there is another frame $S*$  that is moving at a velocity $\vec{v}_*$  , then following
+the diagram, we can tell that, what the frame $S*$  measures the velocity of the object. To him, 
+\begin{equation}
+\vec{V} = \vec{v}_0 - \vec{v}_* 
+\end{equation}
+Doing this thing is not too hard. If we imagine that we are in the frame $S*$, then the whole world will look going behind us 
+at a velocity $-\vec{v}_*$  and this will add to the velocity of the object. \\
+\begin{figure}[hbtp]
+ \centering 
+ \includegraphics[width = 0.8\textwidth]{../UaDrawings/PNGCairo/dop22.png}
+ \caption{We have changed the frame to the box, that is why the universe seems to look moving away in the back, so as this reverted velocity of universe is added to the ball.}
+\end{figure} 
+So remember that if we move in some frame that has velocity $\vec{v}$  then the relative velocity of any object moving at 
+$\vec{v}_0 $  will look like $\vec{v} - \vec{v}_0$  . \\  
+
+\section{Frequency: Using Unitary method}
+I like this method quite a bit as it makes the thing look simple than it is. So, let there be something that is happening quite regularly. Like, 
+let there be a dipping light house, that sends light pulse at one point every 4 seconds. It means that, if there is light somewhere by the lighthouse,
+then after 4 seconds, it will again send a brief pulse and go off. It's like beep-beep-beep.  
+
+Now, let us think it this manner, okay, we know every 4 seconds there is a light pulse. How many light pulse are made in 1 second?
+
+\begin{align*}
+     \text{It takes}\, 4  \,\text{second to beep}\, &1 \, \text{times} \\
+     \text{It takes}\, 1 \,\text{second to beep}\,  &\frac{1}{4}\,\text{times} 
+\end{align*} 
+The amount of beeps made in 1 second is the \emph{Frequency}. There is $0.25$ beeps made in 1 second. 
+Now notice how the thing really works out. 
+\begin{align*}
+    \text{It takes}\, T  \,\text{second to beep}\, &1 \, \text{times} \\
+    \text{It takes}\, 1 \,\text{second to beep}\,  &\frac{1}{T}\,\text{times} 
+\end{align*} 
+And as we have already defined as many beeps done in 1 second is the \emph{frequency }, the frequency relation with time interval 
+or period of beeps (4 seconds in above case) is, 
+\begin{equation}
+    f = \frac{1}{T} 
+\end{equation} 
+Some books refer to tell the $f$  as $\nu$  . I shall use the $f$  only. 
+\section{The Fundamental Problem}
+Now I can pose the problem to be solved, it is easy, not that rigorous. 
+\begin{tcolorbox}
+    Let there be two things, an \emph{Emitter } and a \emph{Wall }. They are at rest to each other. \\
+The emitter can shoot balls towards the Wall at a constant speed and there is no gravity present. So, the balls move in a straight 
+line and they hit the wall. 
+
+The emitter throws the ball in regular intervals, it shoots a ball every $T = 5 \, s$  and the speed of throwing is always 
+$v_b = 10 \, m/s   $. What will be the \emph{frequency }of the balls hitting the wall?  
+\end{tcolorbox} 
+So, every $5$  seconds, one ball is thrown towards the wall, and this is totally fine. There is no gravity, so balls move at 
+a constant speed. So, the ball reach the wall in same time difference. 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{../UaDrawings/PNGCairo/dop1.png}
+    \caption{The diagram of the procedure, emitter and the wall.}
+\end{figure} 
+Let me be clear, let at $t=0$  ball $b_1 $ be shot. And thus at $t=5$  another ball, $b_2 $  will be shot. At $t=10$  the ball
+$b_3 $  will be shot, and so on. 
+
+The distance between the wall and emitter is unchanged (they are at rest respect to each other.) So, the interval the ball reach 
+the wall should be the same. 
+
+So, if (just assume) $b_1 $  reach wall at $t = 100$, then the ball $b_2$  should reach the wall at $t=105$. 
+
+This tell us the Time Period of Ball reaching the wall is 5 seconds. And the ball when they reach the wall hit it. 
+So, the frequency is easy to find, 
+\begin{tcolorbox}
+    \begin{equation}
+        f = \frac{1}{T} = \frac{1}{5} = 0.2 \, Hz
+        \end{equation}  
+\end{tcolorbox} 
+ Now we shall make this quite more interesting. 
+ \begin{tcolorbox}
+     Now, let the emitter and the wall move with respect to each other. We, standing on the ground see that the wall is moving 
+     at a speed of $v_w$ in the right direction, and the emitter moves in the left direction at a speed of $v_e$, and, this is known
+     that the emitter moves faster than the wall. So, the distance between them is \emph{increasing}. 
+
+     The balls are still thrown by the emitter in the previous speed (measured with respect to the emitter, and his high enough to hit the wall,
+     ), then what will the 
+     frequency of hitting balls will be now?
+ \end{tcolorbox} 
+Let me first show you an example what is actually happening over here. Forget the balls for now just concentrate on the postion 
+of the walls and the emitter after the span of some random time $t$ . 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/dop3.png}
+    \caption{The snapshots of the wall and emitter moving away, in Earth ground frame.}
+    \label{ }
+\end{figure} 
+
+So, the distance moved by wall and emitter is, 
+\begin{align}
+    &A = v_e t \\
+    &B = v_w t 
+\end{align} 
+And because the speed $v_e$ is greater, we have the emitter moving away more (with respect to the resting earth upon which we are standing.)
+So, look at the diagram now. These are some snap shots. 
+
+Now we need to concentrate on the main problem, here, to make things convenient, let us move on to the frame of the 
+wall. So, we see that the wall is at rest and there is no motion of it. The emitter, seems to move away. 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/dopcal.png}
+    \caption{Moving to the special frame of the wall.}  
+    \label{ }
+\end{figure} 
+Relative to the Earth, the wall moves rightwards in $v_w$ and relative to Earth, the emiiter moves $v_e$ leftwards. 
+
+Relative to the Wall, this whole Earth moves leftwards at speed $v_w$. So, if relative to Earth emitter moves at $v_e$ then
+the emitter moves at $v_w + v_e$ respect to the wall. 
+
+Now let us move back to the balls, they are shot at a speed of $v_b$ and thus, if the emitter is moving away at $v_w + v_e$ 
+then the wall measure the speed of balls to be, $v_b - (v_w + v_e)$ . Let us say, 
+\[ v_w + v_e = \mathbb{V}\]
+Well, this $\mathbb{V}$ is the relative speed of the emitter with respect to the wall. So, we can just say that the emitter 
+moves away respect to the wall at $\mathbb{V}$ . 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/dopother.png}
+    \caption{Moving emitter changes the speed of particles relative to the wall.}
+    \label{ }
+\end{figure} 
+Now in wall frame, emitter has the speed $\mathbb{V}$ leftwards and ball has speed $v_b$ rightwards. So, remembering the $v_b$ 
+is high enough, the effective speed of ball measured by the wall is,
+\[ v^* = v_b - \mathbb{V} \]
+Now, the speed of ball respect to wall is, $v^*$ . And this is consistent so far. 
+
+Every $T$ seconds 1 ball is shot. Let there be 1 ball shot at time $0$ and at time $T$ the second ball is going to be shot. 
+So, in $T$ time the first ball already travels some distance, and this distance will be the separation between the first and second 
+ball. 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/dop4.png}
+    \caption{Separation of the balls, in the emitter frame. This separation distance will also be the same in the other frame (the wall).}
+    \label{ }
+\end{figure} 
+Moving to emitter frame, it is easy to see that the separation between the two adjacent ball is $v_bT$. This is fine. This separation 
+will also be same in the wall frame, as any observers will always agree on the length of anything irrespective of speed (Non-Relativity sense!). 
+When this pair of ball reach the wall, the first ball hits first, and second ball hits then. They are separated with a distance
+$v_b T$ and they have a speed $v^*$ with respect to wall. So, the time $T'$ they take to make two hit is, 
+\[ v^* T '= v_b T\]
+But wait a second how did we write this above Term? 
+
+Imagine the separation of the ball as a line, then this line should move at the same speed of ball (respect to wall.). So, 
+the tip of the separation touches the wall at some time, and $T'$ later the other end will touch the wall, as the line is 
+moving at $v^*$, the time taken for this will be $T' = s/v^*$. 
+
+This $S  = v_b T$ as we found before. So, we have is, 
+\[T' = \frac{v_b T}{v^* }\] 
+This is what we used above. 
+
+So, the time period of two balls hitting the wall is, $T' = \frac{v_b T}{v^* }$. We need to melt this thing down to frequency 
+and to the object speeds, like ball, wall, emitter speeds with respect to Earth. 
+We have these, 
+\begin{equation}
+    v^* = v_b - \mathbb{V}
+\end{equation}  
+\begin{equation}
+    v_w + v_e = \mathbb{V}
+\end{equation} 
+So, 
+\[ v^* =v_b - v_w - v_e \]
+Using this in the equation, $T' = \frac{v_b T}{v^* }$.
+\[ T' = \frac{v_b T}{v^* } = \frac{v_b T}{v_b - v_w - v_e}\]
+As we know that, 
+\begin{equation}
+f = \frac{1}{T}
+\end{equation} 
+We end up inverting the equation, 
+\begin{equation}
+\frac{1}{T'} = f' = \frac{v_b - v_w - v_e}{v_b} f
+\end{equation}
+We are actually done. 
+
+So this will make the sense if seen in this way. 
+
+The ball speed is varied resepect to various moving frame. Now because of the overall 
+motion of the wall and emitter, there will eminently be some distortion in time. 
+\begin{figure} [hbtp]
+    \centering
+    \includegraphics[width = 0.8 \textwidth]{../UaDrawings/PNGCairo/dopline.png}
+    \caption{The line is moving through the wall, we want to know the time separation of the two events, when the head and the tail of the line touches the wall.}
+    \label{ }
+\end{figure} 
+But yes, we haven't come to the doppler effect yet, but the thing we have done above is a 
+general case to the doppler one. The doppler solution is quite easier. 
+
+\begin{tcolorbox}
+    \textbf{Exercise:}
+    So assume that the balls are thrown at $200 m/s$ and wall is moving away at $100 m/s$ 
+    and relative to us, the Earth is at rest, also the emitter is at rest. And 
+    wall is moving away at a speed respect to all. Balls are shot every $10 \, s$ interval. 
+    
+    What is the frequecy of balls hitting the wall?
+\end{tcolorbox} 
+The next doc will hopefully make the doppler thing clear. 
+\end{document}

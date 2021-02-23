@@ -1,0 +1,92 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,graphicx}
+\usepackage[top=0.5in, bottom=0.5in, left=0.95in, right=0.95in]{geometry}
+\title{The Solution to the Stupid Mechanics Problem}
+\author{Ahmed Saad Sabit}
+\date{\today}
+\clearpage
+
+\begin{document}
+\maketitle
+
+\textbf{\textsf{Problem :}} \, A wedge with mass M and wedge angle $\theta$ sits on a frictionless surface with a block of mass m. If the block starts to slip, then find the acceleration of the wedge.\\
+\\
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.49]{M1 Fig1.png}
+\caption{The diagram free body}
+\end{figure}
+\textbf{\textsf{Idea's and Solution:}} \, The main idea is that the block has a normal force that pushes the wedge by an incline. The y-component of that reaction force doesn't but the x parallel one comes to accelerate the wedge. The advanced additional insight is to understand that the \emph{Normal force} governs the motion of the system, but we cannot write by our intuition that $N=mg\,cos\theta$ because we have an \emph{accelerating} block. Hence take N as an unknown as we write our equations. \\
+\\
+We should make our problem simpler to use in our head by taking all components by the ground, not along the inclined surface (specially for the block). \textbf{Target variable is A}.
+\\ 
+\\
+\\
+Writing the good ol' F= ma for the things.You'll notice the last equation is little teensy if you're novice like me.
+\begin{align}
+mg - N\,cos\theta \,&= ma_y \\
+N\,sin\theta &= ma_x \\
+N\, sin\theta &= MA \\
+\frac{a_y}{ a_x + A} &= tan\theta 
+\end{align}
+\\
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.47]{M2 Fig2.png}
+\caption{Note that there is a horrible looking $\theta$}
+\end{figure}
+\\
+Till the equation 3 above we are fine. But we notice we have 4 unknowns $N,\,a_x,\,a_y,\,A$ but 3 equations. So, remembering \textbf{As many unknown that many equations} we need another independent equation. This can be found by knowing the constraints, as Prof. Morin taught.\\
+\\
+The main idea of finding the last equation is \emph{changing the reference frame} into the block's one. Because the block is (in our general frame) accelerating towards the right in $a_x$, in it's frame we'll find that the whole universe accelerates towards the left with the same $a_x$ (common physics fact). At the same time the block is accelerating in the left with A respect to the ground, so we sitting on the block find whole ground move at $a_x$ and the block moving relative to the ground at A. So, relative to the block, the wedge accelerate at $(a_x + A)$. \\
+\\
+Keeping this in mind, we look for the constraint. If the block comes down by a y (as in the figure), then the wedge to keep up with the block has to move x leftwards. The relation of x and y is clear, it has to make up with the incline as in the figure, and looking at that triangle aside, we can notice that 
+\[x \, tan\theta = y\] \\
+And differentiating twice,
+\[ \frac{d^2 x}{dt^2} tan\theta = \frac{d^2 y}{dt^2}\] \\
+Working in the block's frame, the $\frac{d^2 x}{dt^2}$ is acceleration of the wedge along x direction. And $\frac{d^2 x}{dt^2}$ is acceleration of the block along the y direction, refer to the figure. This evidently leads us to write that
+\begin{equation}
+(a_x + A) \, tan\theta = a_y
+\quad \longrightarrow \quad
+\frac{a_y}{a_x + A} = tan\theta 
+\end{equation}
+\\
+So we have made 4 okay equations. 
+\\
+\\
+\textbf{\textsf{A mistake I made before :}} (also being a motivation to waste time behind this document), I the first time chased the problem making a promise not to cheat by using \emph{Analytical Mechanics}. The last equation what started making me crossed off, I idiotically thought that $a_x$ points the right, A points the left, why won't I subtract to get the relative acceleration ? This was the outcome of \textbf{not being flexible to efficiently chase and switch the frame of reference}. My wrong thought can neither be applicable to a wedge frame. Plus initially I couldn't convince myself that an equation from a different frame might really work, but Physics at least, wasn't so cruel. Rather it was more appreciable that the 4th equation is barely a ratio that outline a simple $tan\theta$. So, using that equation was legal. Better you not make the mistake as me!
+\\
+\\
+So you have these equation's and I leave it as a worthwhile algebra problem.\\ 
+\\
+\textbf{\textsf{Answer:}} $A = \frac{mg\, sin\theta \, cos \theta}{M + m\, sin^2\theta}$
+\\
+\\
+\textbf{\textsf{Reference:}} \textsf{ An Introduction to Classical Mechanics, David Morin, \textbf{Problem 2.7 (2. Moving Plane ***)}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+\documentclass[10pt,a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2.8cm,bottom=2cm]{geometry}
+\author{Ahmed Saad Sabit}
+\title{Constructions on Circle Geometry}
+\begin{document}
+\maketitle
+\section{Constructions}
+
+\subsection{Drawing a tangent to a circle from a Point outside}
+
+The methods are straightforward.
+\begin{itemize}
+\item Draw the center to the point - line. 
+\item Draw the perpendicular bisector.
+\item Take the center in the bisected point and draw a circle with radius upto the point
+\item The circle cuts the main circle. Join the points and we have a tangent.
+\end{itemize}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width= 0.4\textwidth]{F:/User/const1.jpg}
+\caption{Single tangent}
+\end{figure}
+
+\subsection{Constructing a Circumscribing Circle of a triangle}
+
+Similiar procedure.\textbf{Circumcircle} is the circle that joins the vertex of the triangle.
+\begin{itemize}
+\item Draw the perpendicular bisector of any two side of the triangle.
+\item The intersection of the bisector is the center of our sought circle, draw a segment joining a vertex. That is the radius.
+\item What? Draw the circle and we are done!
+\end{itemize}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width =0.5\textwidth]{../User/const2.jpg}
+\caption{Circumcircle}
+\end{figure}
+\newpage
+\subsection{Construction of an Inscribed Circle}
+\textbf{Inscribed Circle} is the one just fitted inside a triangle, also the circle with the largest area that can be taken by the same triangle.
+\begin{itemize}
+\item Draw the angle bisector of any two vertex of the triangle. 
+\item The intersection is the center of the sought circle. Taking the ideal radius is the tricky part. I rather exploit the fact in GeoGebra.
+\item The radius has to be \emph{Perpendicular} on any of the line of the triangle. Take an arc by an arbitrary radius and cut a line, I did the base one.
+\item The two points cut on the line is then used to build a perpendicular bisector. \emph{Mark the bisection}.
+\item Draw a line from incircle center to the marked bisection point. Use it as the radius and we have the circle.
+\end{itemize}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.4\textwidth]{../User/const3.jpg}
+\caption{Incircle}
+\end{figure}
+
+\section{Statistics}
+\subsection{Simple Mean Average}
+For the frequency and the value,
+\[ \bar{x} = \frac{1}{n} \,	\sum_{i=1}^{k} f_i x_i \]
+
+\subsection{Short Cut Mean}
+Take these
+\begin{itemize}
+\item Class Interval
+\item Class Mid Value
+\item Frequency
+\item Step deviation
+\item Frequency $\times$ Step deviation
+\end{itemize}
+The step deviation is given by (mid val - approx mean)/(class int)
+\[ u_i = \frac{x_i - a}{h}
+\]
+And the mean is found by,
+\[ \bar{x} = \frac{ \sum f_i u_i      }{n} \times h
+\]
+
+\subsection{Median}
+Median is the middle term or the average of the middle two terms. For a huge set of data,
+\begin{equation}
+\bar{M} =
+L +
+\left( \frac{n}{2}  -  F_{\text{cumulative of previous}} \right) \times \frac{h}{f_{\text{median class freq}}}
+\end{equation}
+Reconning this is tricky as it gets. Memorize that \textbf{Cumulative to Prev. , Freq to the Med}. \textbf{L} is the lower limit to the median class.
+
+\subsection{Mode}
+Mode is the data that is \emph{repeated the maximum times}.
+\begin{align*}
+\dot{M} = L + \frac{f_1}{f_1 + f_2} \times h \qquad				 	
+		& f_1 = \text{frequency of mode class - frequency to the previous} \\
+	    & f_2 = \text{frequency of mode class - frequency to the next} \\ 
+\end{align*}
+
+\subsection{Central Tendency}
+If  the disorganized data of statistics as arranged according to the value, the tends to cluster round near any central value. Moreover, abundance of data id observed in a single class when these data are presented in some frequency distribution table. \textbf{The tendency of \emph{data} to cluster around the central value is known as the Central Tendency.}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

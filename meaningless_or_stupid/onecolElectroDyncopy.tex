@@ -1,0 +1,616 @@
+\documentclass[11pt,a4paper,landscape,twocolumn]{article}
+\usepackage[cp437]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=1.2cm,right=1.2cm,top=2cm,bottom=2cm]{geometry}
+\author{Ahmed Saad Sabit}
+\title{Electrodynamics}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\theoremstyle{definition}
+\newtheorem{fct}{ \framebox[0.05\textwidth]{{\sffamily Fact}} }
+\theoremstyle{definition}
+\newtheorem{pr}{ \framebox[0.05\textwidth]{{\sffamily Pr}} }
+\theoremstyle{definition}
+\newtheorem{idea}{ \framebox[0.05\textwidth]{{\sffamily Idea}} }
+\theoremstyle{definition}
+\newtheorem{sol}{ \framebox[0.05\textwidth]{Sol} }
+\begin{document}
+\maketitle
+
+I begin ascertaining that the motivation to write such a booklet has been got from Prof. Jaan Kalda. He has made many more great booklets on topics in Physics that concentrate on Competitive Physics problems.
+
+The pedagogy of Electrodynamics has two informal parts, one is using the Coulomb's Law and the other is using Vector Calculus. Coulomb's law shall easily give the magnitude and the direction of the force between two charges, and the Vector calculus approach can solve the thing that would be tiresome to be done with coulomb's. \\
+%
+Problems can be as easy as finding the \emph{Force} in between two charged spheres; or as deep as finding the charge density of two spherical conductor in the aforementioned configuration. One set of problem we use the Coulombs law, basically the fact of using Vectors. 
+ Actually the development in Electrodynamics has been majorly contributed by its similarity with fluid, recalling the way we learn Gauss's Law at first.
+%
+The analogy is taken to the next level, we think as if the dipole is a source and sink pair that conducts water, curiously, the water flow, the streamline in the real world takes the path same as the Electric field lines when it flows above a surface.
+%
+The Momentum of the fluid particles through some wide river and the Field equation of a Homogenous\footnote{"Homogenous" is same as saying "Independent of Position"} Electric field both obey non vortex flow, mathematically,
+
+\begin{align*}
+\nabla \times \vec{P} = 0 \\
+\nabla \times \vec{E} = 0 
+\end{align*}
+
+The $ \nabla \times$ above with a field equation tells the magnitude of rotation or vortex that a field might have. Like, the Magnetic field is always circular around the current carrying wire, so we can say that the magnetic field that case has non zero value as in the equation above. The $\nabla \times$ is called the $curl$. We will discover the idea's on these later. 
+\\
+Doing the maths, we find that one point there is nothing left but the equations like the Gauss's law ones. When it is required to practically solve maths, the application of things like the $\nabla$ becomes important. And the math's name is \emph{Vector Calculus}. No worries, vector calculus is just taking derivatives with equation with a coefficient $ \hat{x}, \hat{y}, \hat{z}$. The booklet is intended to make an introduction of the skills that would be useful in doing such sophisticated (but interesting) Physics problems, and also a directly use-able application of the vector calculus. The reader as assumed to have familiarity with basic calculus, its ideas, and simple Halliday Resnick or University Physics type Electrodynamics.\emph{Griffith} and \emph{Purcell and Morin} will be used as reference. \\
+Our target is to make an arsenal of basic ideas through with we can have intuition behind every problem that we see in Electrodynamics.
+
+If you need more basics, then try out a few simple problems and exercises from the Sears and Zemansky's University Physics
+
+\section{\small{General Electrics}}
+
+We begin with a set of simple Irodov problems. It is assumed that the reader knows Calculus (basics), has idea on the general school textbook Electric Physics, and looking forward to have insight on the topic through problems. The document is not self contained and frequently refers to \emph{University Physics, by Sears and Zemasky} and \emph{Physics - Halliday, Resnick, Krane}. As an addition, we follow \emph{Electricity and Magnetism, by Purcell\footnote{Nobel Laureate} and Morin}.
+
+
+%NOTE!
+% THE GENERAL ELECTRCS TOPIC SHOULD COVER THESE: FINDING FORCE - ELECTRIC FIELD - POTENTIAL - AND THINGS THAT ARE MATHEMAICALLY NOT TOO ADVANCED AND CONCENTRATES ON THE INTERACTION OF MATERIALS.
+
+
+
+
+
+Note that most of the medium and hard electrodynamics problems require the delicate handling of integration and usage of $\sin \theta, \cos \theta$. So during time pressure, it is important to do the math once and for all. Because reviewing the math again is going to consume enough amount of time, so it is wise to take time DURING the math, not AFTER it. Refer to the appendix adjoined if needed.
+
+\textbf{Facts} below inside the boxes are bookish theories. \textbf{Ideas} are creative tactics and some sophisticated facts, or even advice that prove helpful to use to solve a problem.
+
+For completeness, we note the Coulomb's Law.
+
+
+\begin{fct}
+\textsf{The Coulomb's Law and the Electric Field}
+%
+The force is a vector, making the separation of the \emph{vector components}.
+
+
+\[ \vec{F} = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \hat{r} \]
+\[ F_x = F \cos \theta  = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \cos \theta \]
+\[ F_y = F \sin \theta = \frac{1}{4 \pi \epsilon_0} \frac{q_1 \, q_2}{r^2} \sin \theta \]
+
+But it is much good to take the $\frac{1}{4 \pi \epsilon_0}$ as a mere $k$. That is much better and easy to deal with.
+
+\[ \vec{F} = k \frac{q_1 \, q_2}{r^2} \hat{r} \]
+\[ F_x = F \cos \theta  = k \frac{q_1 \, q_2}{r^2} \cos \theta \]
+\[ F_y = F \sin \theta = k \frac{q_1 \, q_2}{r^2} \sin \theta \]
+
+We define the field as \emph{The force per unit charge; one coulomb}.
+\[ \vec{E} = \frac{\vec{F}}{q} \]
+Thus it stands up that, 
+
+\[ \vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \hat{r} \]
+\[ E_x = E \cos \theta  = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \cos \theta \]
+\[ E_y = E \sin \theta = \frac{1}{4 \pi \epsilon_0} \frac{q}{r^2} \sin \theta \]
+
+The differential form is worth mentioning,
+
+\[ d\vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{dq}{r^2} \hat{r} \] 
+
+\end{fct}
+
+\begin{fct}
+\textsf{The Newton Materials}
+If the momentum is $\vec{P}$, mass is $m$ then 
+\begin{equation}
+\vec{F} = m \vec{a}
+\end{equation}
+
+\begin{equation}
+\vec{F} = \frac{d \vec{P}}{dt}
+\end{equation}
+
+\end{fct}
+
+
+\begin{fct} 
+
+\textsf{The idea of Potential}
+%
+When there is energy associated with any electrical system, then the \emph{Energy per unit charge is the potential}.
+
+\begin{equation}
+V = \frac{E}{q}
+\end{equation}
+
+If work is done, by the intuition of the Energy and Work relation, 
+
+\[ V = \frac{W}{q} \]
+\[ V = \frac{dW}{dq} \]
+
+\end{fct} 
+
+
+
+\begin{fct}
+\textsf{The Gauss's Law} Also the First \emph{Maxwell's Equation}, describes the flux through a surface of the electric field. Flux is the streamlines going through a surface. 
+\begin{equation}
+ \int_{S} \vec{E} \cdot \, d \vec{a} = \frac{q}{\epsilon_0} 
+\end{equation}
+
+The technique is usually taking a small surface with some symmetry in it, then using the Gauss's law, without carrying any integration that would be required for the Coulomb one. Good to know that for a sphere the area, 
+\[ A = 4 \pi r^2 \]
+For a cylinder, area of the bases and the curved surface.
+\[ A = 2( \pi r^2 ) + (2 \pi r) h \]
+
+\end{fct}
+
+As to ensure the fluency through out, some simpler problems are given.
+
+
+\begin{pr}
+If a proton and an electron are released with a distance of $d = 2 \times 10^{-10} m$ apart (typical atomic distance), then \textbf{find their initial acceleration}.
+\end{pr}
+
+
+\begin{pr}
+
+Two charges are placed at a distance of $d = 5.25 m$. The ratio of the charges are $ \mu = \frac{5^2}{9^2} $. Where is the place between the line joining the two charges, \textbf{if some other small amount of charge kept would feel no force?}
+
+
+
+\end{pr}
+
+\begin{pr}
+
+So we have found the place where the force on small charge is zero as in the above problem. Now can you use the analogy of the impossibility of balancing a sharp pencil on its tip, \textbf{to defend the statement with physical logic}, that the charge in the "Zero Force place" cannot stay there forever? No need to use maths or something subtle. Refer to fact \ref{equilibrium}.
+
+\end{pr}
+
+%please find the dimentions of the Atlas V rocket
+\begin{pr}
+NASA planned to put some charge on the head of a rocket and same amount of charge in the launch pad. Given the rocket is Atlas V, whose  height is $d = ??$ and the mass $m = ??$, \textbf{what is the amount of charge $Q$ to launch the rocket so that it flies off to the infinite space and never come back?}
+\end{pr}
+
+\begin{pr}
+Four identical charges $Q$ has been placed at the corners of a square of side $L$. \\
+a. In a free body diagram, show all of the forces that act on one of the charges. The diagram should be scaled for sake of visualization and the force vector lengths should be proportionate either. \\
+b. Find the magnitude and direction of the total force exerted on one of the charges by the other three.\\
+c. Should there be any acceleration or any motion ?
+\end{pr}
+
+
+%Put some gauss simple problems
+
+We move on to more sophisticated ones.
+
+
+\begin{pr}
+Two small identical balls carrying the charges of the same sign are suspended from the same point by insulating threads of equal length. When the surrounding space was filled of Kerosene, the divergence angle between the threads remain constant. \textbf{What is the density of the material of which the balls are made?}
+\end{pr}
+
+\begin{idea} \label{ratio}
+A whole lot of uninteresting thing can be excluded only by using \emph{Ratios}. Like the initial value be $V_0 = \beta \times \varphi$ and the final value be $V = \beta \times \varphi'$. If we know that $\varphi = \frac{1}{x}$ and $\varphi'=\frac{1}{x'}$, then it's obviously, 
+
+\[ \frac{V}{V_0} = \frac{\varphi}{\varphi'} = \frac{x'}{x} \]
+And sometimes, some of the ratio can turn into trigonometric ratios. Like the ratio of the vertical $y$ and horizontal $x$ is $\tan \theta$. 
+\end{idea}
+
+\begin{idea} \label{idconst}
+If something stays constant, then the properties causing it shall keep it stay constant by equalizing (or balancing). And the derivative would be a zero.
+\end{idea}
+
+{\small Note that this idea gains importance if the ``Property" is one in number. As a hint, the only thing causing the threads divergence angle to stay constant is the ``Tension" of the string. So our idea will intuitively mean the property of the constant divergence angle $\alpha$ is the Tension force. The Tension of the string is caused by the Weight of the ball and the Electrical force. In kerosene, the tension force arises from the (Weight of the ball - Buoyant force from kerosene) and the Electric force inside the kerosene. And both shall cause the tension the equal. And finding the way to exploit the equal tension idea is left as the mystery of the problem. All is to make use of idea \ref{idconst} and to use the trigonometric way of idea \ref{ratio}. } 
+
+{\small In vacuum, the constant $k = \frac{1}{4 \pi \epsilon _0} $. In kerosene it will take some other $ \epsilon_{kerosene}$ value that is the \emph{Electric permittivity of Kerosene}. It's value would be in the data sheet. And to find the density, the target, use the simple reason \emph{why buoyancy should arise}.}
+
+ 
+
+
+\begin{pr} \label{pr1}
+Two small equally charged spheres, each with a mass $m$, are suspended from the same point by silk threads of length $l$. The separation of the two sphere is $x$, and $x < < l$. \textbf{Find the rate of charge leak $\dfrac{dq}{dt}$ with which the charge leaks off sphere} if their approach \emph{velocity} varies by $v=\frac{a}{\sqrt{x}}$, while $a$ is a constant.
+\end{pr}
+{\small
+To solve for the $\frac{dq}{dt}$, the idea lies in the tricky application of the way calculus can be used, it is that if it appears the we have an equation say somewhat like $ q = \alpha x $, then little increment in both side is $ \mathrm{d}q = \alpha \mathrm{d}x $ is we assume that $\alpha$ is a mere constant. Now dividing the both side by a $\mathrm{d}t$ yields us $\frac{dq}{dt} = \alpha \frac{dx}{dt} $. That gives us a velocity, and it's mathematically legal. 
+
+And the other thing is knowing the use of the approximation $\sin x \approx \tan x \approx x $.Then, if there is some function $f(x)$, it's derivative can be written as $f'(x) = \varsigma f(x) $ in order to reduce something uninteresting.}
+
+\begin{pr} \label{pr2}
+A thin wire has electric charge $q$ and and radius $r$. \textbf{What would be the increment of the tension in the wire (the force of stretching) if a $q_0$ is introduced in the center of the wire?}
+\end{pr}
+
+{\small The technique to the problem \ref{pr2} is really easy.Draw the two tension forces placed at two points nearby on the string. The points makes small $\theta$ with the center. Now the vertical components of the tension should cancel out the electric forces. As $\theta << 1$, $\sin \theta \tilde{=} \theta $. That's how the equation should be found. Notice that the tension of the charged ring don't really effect the new tension increment. So you can work out the math totally forgetting about that. The ability of the problem weakens drastically if you have seen the way how in \emph{Halliday, Resnick, Krane} the equation of the velocity of the wave on a string was derived.}
+
+
+\begin{pr} \label{pr3}
+A system of consists of a thin charged wire of radius $R$ and there is a very long charged thread that is aligned along the axis of the ring. The charge consisted by the thread is $q$ and the charge density of the thread is $\lambda$. \textbf{Find the \emph{Forces of interaction} in the system to the thread}.
+\end{pr}
+
+\begin{fct}
+Reference to the calculus way of finding the $\vec{E}$ field over a charged string.
+
+
+Suppose we are $r$ distance above an infinite string. If we need to carry out any integration so that the full string is covered, we rather than taking the integration limits from $- \infty$ to $ + \infty$ over the $x$ axis of the string, we turn the equations so that there is a trigonometric quantity, that is $r \tan \theta = x $, the $\theta$ made with the $r$ line perpendicular to the string. Now, carrying out integration about $ \theta = -\frac{ \pi }{2 } $ to $ \theta = \frac{\pi}{2} $ is same as taking the infinite over $x$. 
+\end{fct}
+
+Using this the maths can be made easier to do.
+ 
+{\small The problem \ref{pr3} is the technique of carrying out a Genius integration, you might see the appendix for the math.}
+%Image charge start
+\begin{pr}
+Find the force on a charge $Q$ that is $h/2$ height above an infinite sheet conductor.
+\end{pr}
+Definitely the preceding ideas and facts have to be used.
+\begin{fct}{\sffamily Image Charge}
+If any charge is above an infinite conductor by $y$ height, then the charge causes opposite charges to come and accumulate over the surface. Thus a force towards the surface on the charge develops. The magnitude of the force is exactly same of the configuration of an opposite charge staying $2y$ distance away. As if, the conductor was a mirror, and the place where the charge's image is the position of another opposite charge attracting. 
+\end{fct}
+\begin{idea}{\sffamily Mirrors in Electrostatic Force}
+Laws of reflection definitely works for the solution of conductor-charge pair problems.
+\end{idea}
+%
+\begin{pr}{\sffamily BdPhO 2014}
+Two pieces of sheet conductors grounded, makes a shape of $L$ at the corners. A charge $Q$ is put $r$ distance from the corner, so that the perpendicular distance from the conductor sheets remains equal. What should be the magnitude and direction of the force vector?
+\end{pr}
+\begin{fct}
+If the conductors of the ``Image Charge" system is grounded, then during the vicinity (means ``near") of the real charge, the same polarity of charge of the real charge goes away in the ground, same way as in the ``Electroscope" charging process.
+\end{fct}
+
+%image charge end.
+\begin{pr} \label{pr4}
+\textsf{APhO-EuPHO BGdTST2019} There is a plastic solid sphere and it has a spherical cavity inside it a distance $b$ from the center of the ball and the radius of the cavity is $a$ that follows that $a <b$. The uniform charge density of the ball is $\rho$. Then \textbf{Find the Electric Field inside the cavity}.
+\end{pr}
+
+{\small Whenever there is any absurd hole in a system, then one way of attacking the system is to assume \emph{there was no hole} and find the equation, then replacing some other parameter to return back to the initial system and solve for the target variable. 
+
+In this case in problem \ref{pr4}, the cavity (hole) can be assumed a superimposition of a positive area (like the solid sphere without any cavity) and a negative area. So the net charge is same as a void in that area, so meets the condition}
+
+{\scriptsize \textbf{Remark:} When I was in the APhO-EuPhO Selection test, I tried to do the problem by using the Coulomb type formula and integrate. But simply it was impossibly difficult. And the cause of downfall then. This motivates the next idea}
+
+\begin{idea}
+Avoid the calculation using extremely difficult equations and too long mathematics, there is definitely a simpler way, confirm if it is a competition.
+\end{idea}
+%PLEASE PUT SOME DIAGRAM	
+\begin{fct}{\sffamily Gradient}
+For any function, the vector that we use to show the \emph{Tangent} of any function is the Gradient (rough statement). Or simply, the Tangent vector itself is the Gradient of any function. Note that this function is a function of coordinates $(x,y,z)$. \footnote{Adding more coordinates $e_1,e_2,\cdots$ is the motivation of ``Tensor".}
+\end{fct}
+\begin{fct} {\sffamily Electric Field as the ``Gradient" of Potential}
+Electric Field is the \emph{Tangent to the rate of change of Potential with respect of Position}, that is, in Vector Calculus language, Electric Field is the \emph{Gradient} of the \emph{Potential}. A derivation has been shown in the Appendix.
+\begin{equation}
+ \vec{E} = - \left(	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}\right) 
+\end{equation}
+In the Gradient form,
+\begin{equation}
+\vec{E} = - \nabla V
+\end{equation}
+\begin{equation}
+\vec{E} = - \mathrm{grad} \, V 
+\end{equation}
+
+\end{fct}
+
+ 
+\begin{fct} \label{potsdist}
+Total work done on a unit charge to bring it close to any other charge $Q$ to a distance $r$ from infinity $\infty$ is the Potential Energy at the point $r$. The same is taking the charge from $r$ to infinity $\infty$, but it takes the opposite sign. \end{fct}
+\begin{fct} \label{equilibrium}
+Something in equilibrium means that the total force on the particle is 0 and it tends to stay in that condition. Which means if a very small displacement $\delta \vec{x}$ is caused, then there should be some small $\delta \vec{F}$ force that brings the particle in its initial position. That is to zero out the displacement. IF that small force is not present, or it doesn't bring the particle into the initial position, then it should known that the Equilibrium is not stable. For the calculation, approximations as the Taylor Series is used. 
+\end{fct}
+%
+%
+ \begin{pr}
+ A finite system of point charges has been made stable, they are in a stationary equilibrium because of there own electric fields. \textbf{What is the electrostatic interaction energy of the system?}
+ \end{pr}
+Use the following facts. Specially the \ref{potsdist} fact.
+%
+%
+\begin{pr} \label{pr5}
+\textbf{Find the electric field strength vector} if the potential of the field has a form $\Phi = \text{\textbf{ar}}$ where \textbf{a} is a constant vector and \textbf{r} is the radius vector from the source.
+\end{pr}
+%
+%
+\begin{pr} \label{pr6}
+\textbf{Find the electric field strength vector} if the potential of the field is dependent on the $x,y$ coordinates by 
+\[ \Psi = a (x^2 + y^2) \]
+\end{pr}
+%
+\begin{pr} \label{pr7}
+\textbf{Find the electric field strength vector} if the potential of the field is dependent on the $x,y$ coordinates by 
+\[ \Psi = axy \]
+\end{pr}
+%
+Refer to the appendix for the method.
+%
+\begin{pr}
+A point dipole has a dipole moment $p$. It is oriented in the positive direction of the $z$ axis, that is located at the origin of the coordinates. \textbf{Find the projecion of the $E_z$ and $E_{\perp}$ of the electric field strength vector} (on the plane perpendicular to the z axis at the point $S$). The point $S$ makes an angle $\theta$ and is $r$ distance from the point source.
+\end{pr}
+%
+%
+\begin{idea}
+Sometimes, the usage of Vectors and exploiting the definition of vectors are preferable.
+\end{idea}
+
+\begin{pr}
+Three small positively charged pearls lie one at each vertex of a triangle, their masses are $m_1,m_2,m_3$. And respectively, their charges are $Q_1, Q_2, Q_3$. When the pearls are released from rest, they move and follow a different straight line each. Neglect gravity. Their charge to mass ratio is given by 
+
+\[ \frac{Q_1}{m_1} : \frac{Q_2}{m_2} : \frac{Q_3}{m_3} = 1:2:3 \]
+
+\textbf{What special conditions should be imposed so that they follow their straight line? And what should be the angles of the Triangle?}
+\end{pr}
+
+Being an extremely useful problem, it requires bit more algebra, as a corresponding hint, 
+
+\begin{fct} \textsf{Vector Multiplication}
+The cross product of two parallel vector is always 0. And the dot product is always the maximum. \\
+
+Cross product is,
+\[ \vec{a} \times \vec{b} = \vec{r} \]
+The magnitude of the vector $\vec{r}$ is,
+\[ r = a \, b \, \sin \theta \]
+Where the $\theta$ is the angle between the vectors. And the direction of $\vec{r}$ vector points along the thumb direction by assuming curling our right hand finger from $\vec{a}$ to $\vec{b}$. Very necessarily, we are interested on the perpendicular projection of one of the vectors, and its multiplication. Reference to Halliday, Resnick's Physics.
+
+
+Dot product is,
+\[ \vec{a} \cdot \vec{b} = r \quad \text{scalar ``r"} \]
+The magnitude is same,
+\[ a \, b \, \cos \theta = r \]
+Now we have a scalar $r$ and the projection of one vector on the other is now our interest.
+%
+Cross product can be used to perpendicular things or constraining the directions or things.
+
+\end{fct}
+
+Above in the problem, the cross product of the acceleration vector $\vec{a}$ with the small displacement vector $\vec{\Delta x}$ should be $0$. And, because there is no internal force, the next idea can be implied.
+
+\begin{idea}
+Total force in a systems particle is $ \vec{F_{\Sigma}}  = \vec{F_{external}} + \vec{F_{internal}}$. When the external force is absent, then by Newton's third law, the internal force, whatever the direction, shall conserve the point where the center of mass is. Hence if $\vec{r_i}$ is the position vector of an $i$-th particle with respect to the center of mass,
+\[ \sum m_i \vec{r_i} = 0 \]
+Same said that, for three bodies, 
+\[ m_1 \vec{r_1} + m_2 \vec{r_2} + m_3 \vec{r_3} = 0 \]
+By taking the derivative, the idea can be extended further,
+\[ m_1 \vec{r_1} + m_2 \vec{r_2} + m_3 \vec{r_3} = 0 \]
+\[ m_1 \vec{v_1} + m_2 \vec{v_2} + m_3 \vec{v_3} = 0 \]
+\[ m_1 \vec{a_1} + m_2 \vec{a_2} + m_3 \vec{a_3} = 0 \]
+\end{idea}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{\small{Appendix}}
+\subsection{{\small The derivation for the Gradient of Potential to be the Electric Field}}
+We can show that by the principle of work done on a test charge moving towards the vicinity of a bigger charge (both same type of charge; both positive or both negative) is,
+
+\[ W = F \times (-r) \]
+
+Negative as we have to reduce the mutual distance in between the charges, and the force vector points opposite the way we are displacing. By a small increment,
+
+\[ dW = - F \, dr \]
+
+Integrating from initial position $r_1$ to final position $r_2$, 
+
+\[ W = \int dW = -\int_{r_1}^{r_2} F \, dr \]
+
+Now, we know that $ V = W/q $, so putting that, means dividing both side with $q$, 
+
+\[ \frac{1}{q} W = \frac{1}{q} \int dW = -\frac{1}{q} \int_{r_1}^{r_2} F \, dr \]
+
+This is thus trivially, 
+
+\[ V = -  \int_{r_1}^{r_2} E \, dr \]
+
+More specifically, it can be easily shown that 
+
+\[ V = - \int \vec{E} \cdot \, d\vec{r} \]
+
+This is also useful in the both side differentiated form, that reaches to vector calculus introduction,
+
+\[ E_x = - \frac{dV}{dx} \]
+
+Note this will only work if the $\vec{E}$ has no components except the $x$ axis, otherwise the formula for the system is,
+
+\[ \vec{E} = - \left(	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}\right)  \]
+
+And Physicists isolated the common above to turn it to something simple and less time consuming, can't we just write the $\frac{d}{dr} \hat{r} $ type of things in the equation once and for all? \\
+We had that,
+\[ \left(	\frac{dV}{dx} \hat{x} + \frac{dV}{dy} \hat{y} + \frac{dV}{dz} \hat{z}\right)  \]
+If we keep reducing and introduce a symbol,
+ \[ = \left(	\frac{d}{dx} \hat{x} + \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) V \]
+ Our new symbol should stand for the bracketed part above, let it be $\nabla$,
+ \[ \left(	\frac{d}{dx} \hat{x}+ \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) = \nabla \]
+ 
+ Thus with our new symbol, 
+ \[ \left(	\frac{d}{dx} \hat{x} + \frac{d}{dy} \hat{y} + \frac{d}{dz} \hat{z} \right) V = \nabla V \]
+ Our Electric Equation, 
+\[ \vec{E} = - \nabla V \]
+
+Some also like to say it in a grand style, this has some similarities with a \emph{Gradient}, so some also say it, 
+
+\[ \vec{E} = - \mathrm{grad} \, V \]
+ 
+ This is really easy and very fun, we take three derivatives respect to $x,y,z$ and have answers.
+\subsection{\small{The Gradient of a Scalar Function}}
+
+The math is more easy to understand through an example.\footnote{``The best way to \emph{learn} Mathematics is \emph{doing} it}
+
+\begin{pr}
+If a function $\Phi = axy ^3 + xyz + x^2z$, then find the $ \nabla \Phi $
+\end{pr}
+
+\begin{sol}
+I will show the method directly over here, same problems also included after it.
+\\
+Let's do one by one, when differentiating about x, then y and z acts as a constant
+\[ \frac{d}{dx} \Phi = \frac{d}{dx} (axy ^3 + xyz + x^2z) = 
+	ay^3 + yz + 2xz \]
+	\[ \frac{d}{dy} \Phi = \frac{d}{dy} (axy ^3 + xyz + x^2z) =
+	3axy^2 + xz + x^2z \]
+	\[ \frac{d}{dz} \Phi = \frac{d}{dz} (axy ^3 + xyz + x^2z) =
+	axy^3 + xy + x^2 \]
+So, all together, as we know,
+ \[ \left(	\frac{d \Phi}{dx} \hat{x} + \frac{d \Phi}{dy} \hat{y} + \frac{d \Phi}{dz} \hat{z} \right)  = \nabla \Phi \]	
+
+Our sought answer is,
+\[\nabla\Phi = \]
+\[ (ay^3 + yz + 2xz) \hat{x} \, + \, (3axy^2 + xz + x^2z) \hat{y} \, + \, (axy^3 + xy + x^2) \hat{z} \]
+
+
+\end{sol}
+
+\begin{pr}
+Keep finding the gradient, or $ \nabla \Phi $ 
+\begin{enumerate}
+\item $\Phi= x^4 $
+\item $\Phi= x y z^2 $
+\item $\Phi= x + y +z $
+\item $\Phi= ax^2 + by^4$
+\item $\Phi= x\frac{y}{z^3}$
+\item $\Phi= \frac{xy}{z^3} + \frac{abx^3}{y - z} $
+\item $\Phi= a\frac{45x}{6z^3} $
+\item $\Phi= e^x + ye^z $
+\end{enumerate}
+\end{pr}
+
+
+\subsection{\small{Approximation method}}
+Let a function be $f(x) = x^2 $. Then, putting any small number $\delta$ in the function should give nearly zero. As an example, the function is to take a square, so if $\delta$ is assumed to equal 0.001, its square, $ \delta^2 = 0.000001 $. Because, $ \delta ^2 = \frac{1}{1000^2} = \frac{1}{1000000} = 0.000001 $. The small the $\delta$, the small its exponent is gonna be. So if we put a small ``displacement" $\delta$ along $x$ in the function, what we will have is,
+\[ f(x)= x^2 \]
+\[ f(x + \delta ) = x^2 + 2x\delta + \delta^2 \]
+From our previous learning, $\delta << 1  $, $\delta ^2$ is too small to use. We ignore the $\delta^2$ in the equation, so,
+\[ f(x + \delta) = x^2 +2x \delta \]
+To understand how much efficient this is, let $ x =5 $ and $ \delta = 0.01$ (not too small!), so directly,
+\[ (5 + 0.01)^2 = 25.1001 \]
+Using the approximated system, 
+\[ (5 + 0.01)^2 = 5^2 + ( 2 \times 5 \times 0.01 ) = 25.1 \]
+Of course, rounding off the value, both are same, $25.1001 \tilde{=} 25.1$. So, the approximation works.
+
+
+For all kinds of general case, let $f(x) = x^n $. For defining any small $\delta$ displacement, by the fundamental idea of calculus (derivatives),
+\[ m = \frac{\Delta y}{\Delta x} = \frac{\Delta f(x)}{\Delta x}\] 
+Through ideas of limits and other things, in Leibnitz way, taking $m = \frac{d f(x)}{dx}$,
+\[ \frac{d f(x)}{dx} = \frac{ f(x + h) - f(x) }{(x + \delta) - x} = \frac{ f(x + h) - f(x) }{\delta}\]
+The $\delta$ be taken left side and so as the $f(x)$ part, yields,
+\begin{equation} \label{:approx1}
+f(x+\delta) = f(x) + \delta \frac{d f(x)}{dx} 
+\end{equation}
+As a proof, for the previous numerical example, $f(x) = x^2 $, so $ \frac{d f(x)}{dx} = 2x $. Plug it in the equation \ref{:approx1},
+\[ f(x + \delta) = (x + \delta)^2 = x^2 + ( 2x) \delta \]
+
+
+Like so, any function having small displacement can be approximated. 
+
+\begin{equation}
+f(x + \delta) = f(x) + \delta \frac{df(x)}{dx}  
+\end{equation}
+
+\subsection{\small{Taylor Series}}
+The idea of the Taylor series is to make a function into some power series, \textbf{not too necessarily for Approximation}. The series is 
+\begin{align}
+f(x) = f(a) + f'(a) (x - a) + \frac{1}{2!} f''(a) (x - a)^2 + \notag \\
+ \frac{1}{3!} f'''(a) (x-a)^3 + \cdots
+\end{align}
+\textbf{NOT TO BE CONFUSED WITH THE APPROXIMATION SERIES}. The $a$ is any number, most likely $1$ or $0$. $f''(a) = \frac{d^2 f(a)}{dx}$ in short and so on. As a part of example, why we need it, let's think what can it do to $\sin x$.
+
+\[a = 0 \]
+Now, \begin{align}
+& f(a) = \sin 0 = 0 \notag \\
+&f'(a) =  \cos 0 = 1\notag \\
+&f''(a) = -\sin 0 = 0 \notag\\
+& f'''(a) = -\cos 0 = -1\notag \\
+&f^{(4)} (a) = \sin 0 = 0 \notag\\
+&f^{(5)} (a) = \cos 0 = 1
+\end{align}
+So put these where they belong and yields,
+
+\begin{equation}
+f(x)= \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots
+\end{equation}
+See that if the $x<<1$ then the Taylor series can also be used to approximate.
+
+
+We can keep showing,
+\begin{equation}
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}
+\end{equation}
+\begin{equation}
+\sqrt{1 + x} =  1 + \frac{x}{2} - \frac{x^2}{8} + \cdots
+\end{equation}
+\begin{equation}
+\frac{1}{\sqrt{1 + x}} = 1 - \frac{x}{2} + \frac{3x^2}{8} + \cdots
+\end{equation}
+
+\begin{pr}
+Keep finding the Taylor series,
+\begin{itemize}
+\item$ \frac{1}{1-x}$
+\item$ \frac{1}{\sqrt{1 + x^2}}$
+\item$ \frac{1}{(1-x)^2} $
+\item$ln(1-x) $
+\item$ e^x$
+\end{itemize}
+\end{pr}
+\begin{pr}
+What would be the approximations if $x$ is small in a way that till $x^3$ cannot be \emph{ignored} but later than $x^3$ can be?\footnote{Hint: $x^4$ is too much small, but $x^3$ isn't.}
+\begin{itemize}
+\item$ \frac{1}{1-x}$
+\item$ \frac{1}{\sqrt{1 + x^2}}$
+\item$ \frac{1}{(1-x)^2} $
+\item$ln(1-x) $
+\item$ e^x$
+\end{itemize}
+\end{pr}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+\end{document}
